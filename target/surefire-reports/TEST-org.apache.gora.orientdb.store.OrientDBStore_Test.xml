@@ -1,0 +1,1673 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="1" time="21.348" errors="0" skipped="0" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\bin"/>
+    <property name="java.vm.version" value="23.7-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Nicolas\gora\gora-orientdb"/>
+    <property name="java.runtime.version" value="1.7.0_17-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Nicolas\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 7.4\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Smart Projects\IsoBuster;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.7.0_17\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\Nicolas"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Nicolas"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 7.4\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_17\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar -Pmaven-3 clean install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_17"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_17\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 7.4\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="1.847" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="addSeveralTopLevelDocumentFields"/>
+  <testcase time="0.435" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="addConflictingFields1"/>
+  <testcase time="0.438" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields"/>
+  <testcase time="0.432" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField"/>
+  <testcase time="0.853" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetPartitions"/>
+  <testcase time="0.612" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists"/>
+  <testcase time="0.578" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage"/>
+  <testcase time="1.203" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery"/>
+  <testcase time="0.7" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema"/>
+  <testcase time="0.426" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested"/>
+  <testcase time="0.536" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields"/>
+  <testcase time="0.378" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema"/>
+  <testcase time="0.718" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryStartKey"/>
+  <testcase time="0.402" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema"/>
+  <testcase time="0.351" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance"/>
+  <testcase time="0.698" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey"/>
+  <testcase time="0.684" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema"/>
+  <testcase time="0.312" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting"/>
+  <testcase time="0.778" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields"/>
+  <testcase time="1.718" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange"/>
+  <testcase time="0.391" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive"/>
+  <testcase time="0.405" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested"/>
+  <testcase time="0.538" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKey"/>
+  <testcase time="0.391" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive"/>
+  <testcase time="0.623" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete"/>
+  <testcase time="0.452" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet"/>
+  <testcase time="0.456" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery"/>
+  <testcase time="1.314" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate">
+    <failure type="java.lang.AssertionError">java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:92)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertNull(Assert.java:551)
+	at org.junit.Assert.assertNull(Assert.java:562)
+	at org.apache.gora.store.DataStoreTestUtil.testUpdateWebPageRemoveField(DataStoreTestUtil.java:701)
+	at org.apache.gora.store.DataStoreTestBase.testUpdate(DataStoreTestBase.java:217)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</failure>
+    <system-err>17377 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+17377 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+17384 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+17388 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url localhost:2424/searchDB
+17390 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee has been created
+17390 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+17397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : WebPage
+17400 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url localhost:2424/searchDB
+17402 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+17611 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee has been created
+17786 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+17786 [main] INFO org.apache.gora.store.DataStoreTestBase - test method: testUpdate
+17789 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee has been created
+17793 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567890  is added to the db
+17797 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567891  is added to the db
+17800 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567892  is added to the db
+17803 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567893  is added to the db
+17805 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567894  is added to the db
+17806 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17806 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17807 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : 1234567890  is added to the db
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  name;     FieldTypeunion;     UNION
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:nm
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : John Doe 5
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  dateOfBirth;     FieldTypelong;     LONG
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  ssn;     FieldTypestring;     STRING
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : 1234567890
+17810 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  salary;     FieldTypeint;     INT
+17812 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+17813 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17813 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17813 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17816 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+17817 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17817 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17817 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17820 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+17822 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17822 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17822 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17826 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+17828 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17828 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17828 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17831 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+17833 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17833 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17833 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17836 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+17837 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17837 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17838 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17840 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+17842 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17842 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17843 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17845 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+17850 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17850 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17850 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+17850 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17850 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17851 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17851 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+17851 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17851 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17851 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17855 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17856 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17857 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17857 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17858 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17858 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17861 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+17864 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17864 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17864 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+17865 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17865 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17865 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17865 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+17866 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17866 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17866 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17867 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17868 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17869 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17869 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17869 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17869 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17872 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+17876 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17876 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17876 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+17876 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17876 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17877 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17877 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+17877 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17877 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17877 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17879 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17880 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17880 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17880 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17880 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17881 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17883 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+17886 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17887 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17887 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+17887 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17887 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+17888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17890 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17890 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17891 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17891 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17891 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17892 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17894 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+17897 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17897 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17897 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+17897 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17898 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17900 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17901 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17902 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17902 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17902 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17903 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17905 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+17909 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17909 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17910 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+17910 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17910 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+17911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17913 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17913 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17914 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17914 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17915 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17915 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17917 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+17920 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17920 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17920 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+17921 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17921 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17921 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17921 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+17921 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17922 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17922 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17924 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17924 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+17926 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17926 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17926 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17926 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17929 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+17932 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17932 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17932 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+17932 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17933 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17933 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17933 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17933 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17934 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+17934 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17934 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17934 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17937 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17938 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17939 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17939 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+17939 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17939 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17939 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17944 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17945 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17949 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17954 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17955 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17955 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+17955 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17955 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17955 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17960 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17961 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17961 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+17961 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17961 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17961 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+17965 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+17966 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+17966 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+17966 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+17966 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+17966 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+17969 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+17970 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17971 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+17971 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+17971 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+17971 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+17972 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17972 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17972 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17972 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17975 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+17979 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17980 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+17980 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+17980 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+17980 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+17981 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17981 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17981 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17981 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17984 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+17986 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17986 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+17987 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+17987 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+17987 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+17987 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17987 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17988 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17988 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17990 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+17993 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17994 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+17994 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+17994 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+17994 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+17995 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+17995 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+17995 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+17995 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+17997 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+17999 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+17999 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+17999 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18000 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18000 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18000 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18000 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18000 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18001 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18003 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18004 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18005 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18005 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18005 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18005 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18006 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18007 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18007 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18009 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18012 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18014 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18014 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18014 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18014 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18014 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18015 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18015 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18015 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18016 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18017 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18021 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18022 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18023 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18023 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18023 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18023 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18023 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18025 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18026 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18026 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18026 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18026 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18027 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18027 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18027 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18027 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18029 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18032 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18033 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18034 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18034 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18034 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18034 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18034 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18036 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18036 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18037 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18038 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18040 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18044 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18044 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18044 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18045 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18045 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18045 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18045 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18046 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18046 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18046 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18046 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18046 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18048 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18049 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18049 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18049 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18049 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18050 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18050 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18050 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18050 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18052 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18055 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18055 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18056 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18056 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18056 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18056 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18056 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18057 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18057 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18057 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18057 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18057 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18060 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18061 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18061 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18061 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18061 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18062 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18062 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18062 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18062 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18064 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18067 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18067 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18068 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18068 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18068 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18068 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18068 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18069 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18069 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18069 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18069 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18069 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18071 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18071 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18072 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18072 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18072 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18072 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18072 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18073 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18073 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18076 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18080 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18080 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18081 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18081 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18081 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18081 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18081 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18082 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18082 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18082 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18082 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18082 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18084 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18085 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18085 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18085 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18085 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18086 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18086 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18086 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18087 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18092 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18096 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18097 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18097 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18097 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18098 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18098 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18099 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18100 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18100 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18100 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18100 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18101 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18101 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18101 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18102 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18105 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18109 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18109 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18110 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18110 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18110 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18110 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18110 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18111 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18111 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18111 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18111 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18111 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18114 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18114 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18115 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18115 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18115 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18115 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18115 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18116 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18116 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18116 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18116 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18116 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18121 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18121 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18121 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18121 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18122 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18122 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18126 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18127 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18127 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18127 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18127 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18128 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18133 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18134 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18134 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18134 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18134 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18134 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18138 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18138 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18139 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18139 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18139 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18139 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18139 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18140 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18140 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18141 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18141 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18141 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18145 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18145 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18145 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18146 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18146 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18146 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18146 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18147 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18147 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18147 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18147 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18147 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18149 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+18151 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18152 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18152 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18152 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18152 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18152 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18153 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18153 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18155 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18157 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18158 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18158 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18158 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18159 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18159 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18159 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18160 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18161 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18163 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18164 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18164 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18164 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18165 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18165 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18165 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18165 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18168 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18170 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18171 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18171 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18171 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18172 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18172 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18172 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18172 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18175 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18177 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18178 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18178 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18178 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18179 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18179 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18179 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18179 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18185 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18188 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18189 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18189 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18189 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18190 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18190 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18190 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18190 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18193 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18196 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18197 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18197 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18197 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18198 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18198 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18198 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18199 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18201 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18211 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18211 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18211 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18211 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18213 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18213 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18214 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18214 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18214 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18216 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18217 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18217 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18240 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18240 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18242 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18243 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18243 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18243 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18251 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18256 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18256 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18256 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18256 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18257 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18257 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18257 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18257 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18258 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18259 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18260 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18260 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18260 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18260 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18263 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18275 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18275 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18275 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18276 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18277 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18277 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18277 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18277 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18280 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18285 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18286 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18287 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18288 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18288 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18290 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18290 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18290 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18290 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18291 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18291 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18293 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18295 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18295 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18295 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18296 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18297 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18297 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18297 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18297 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18299 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18299 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18300 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18300 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18300 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18301 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18301 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18301 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18302 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18304 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18307 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18307 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18307 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18307 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18307 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18308 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18308 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18308 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18308 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18309 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18309 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18309 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18309 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18310 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18312 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18312 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18314 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18315 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18315 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18315 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18316 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18316 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18316 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18318 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18321 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18322 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18322 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18322 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18322 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18322 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18323 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18323 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18323 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18324 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18325 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18325 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18325 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18325 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18326 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18326 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18326 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18326 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18328 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18331 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18332 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18334 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18334 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18334 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18334 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18334 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18335 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18335 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18335 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18335 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18336 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18338 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18338 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18338 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18338 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18339 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18342 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18343 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18343 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18343 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18345 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18346 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18346 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18346 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18346 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18346 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18348 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18349 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18351 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18351 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18351 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18351 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18351 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18352 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18356 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18356 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18356 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18358 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18359 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18359 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18359 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18359 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18359 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18361 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+18362 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18362 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18362 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18363 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18364 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18365 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18367 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18368 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18369 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18370 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18371 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18372 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18373 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18374 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18375 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18376 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18377 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18379 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18381 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18381 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18382 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18382 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18382 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18382 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18384 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18386 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18386 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18386 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18386 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18386 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18387 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18389 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18391 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18391 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor5
+18391 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18391 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor3
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor1
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18392 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18393 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18394 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18397 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18398 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18398 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18398 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18398 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18398 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18399 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18399 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18399 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18400 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18401 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18401 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18402 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18402 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18402 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18402 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18404 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18407 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18408 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18408 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18408 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18408 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18408 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18409 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18409 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18409 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18410 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18411 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18411 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18412 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18412 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18412 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18412 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18414 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18417 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18418 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18418 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18418 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18421 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18421 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18421 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18423 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18423 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18423 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18423 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18426 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18429 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18430 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18430 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18430 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18430 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18430 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18431 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18431 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18431 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18432 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18432 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18432 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18432 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18432 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18435 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18435 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18435 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18436 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18437 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18437 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18437 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18437 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18440 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18444 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18445 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18445 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18445 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18446 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18446 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18446 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18446 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18447 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18450 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18451 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18451 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18451 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18451 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18451 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18452 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18452 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18452 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18452 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18452 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18453 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18453 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18456 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18461 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18462 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18462 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18462 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18462 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18462 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18464 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18465 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18465 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18465 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18465 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18465 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18466 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18466 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18466 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18467 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18467 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18467 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18468 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18471 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18476 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18476 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18476 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18476 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18477 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18477 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18477 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18477 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18477 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18480 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18481 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18481 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor0
+18481 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor4
+18482 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor2
+18482 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : anchor6
+18482 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18482 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18482 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18483 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18483 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18483 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18485 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18488 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18494 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18494 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18494 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18495 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18495 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18495 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18495 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18496 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18496 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18497 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18497 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18497 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18497 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18497 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18503 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18503 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18503 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18503 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18503 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18507 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18509 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18509 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18509 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18509 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18509 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18513 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18514 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18514 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18514 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18515 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18515 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18515 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18515 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18515 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18518 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18518 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18518 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18518 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18518 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18519 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18519 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18519 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18519 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18519 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18520 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18520 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18520 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18520 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18523 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18523 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18523 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18523 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18523 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18524 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18524 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18524 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18524 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18525 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18525 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18525 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18525 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18525 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18529 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18530 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18530 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18530 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18530 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18530 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18533 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage has been created
+18535 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18536 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18537 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18537 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18537 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18539 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18542 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18543 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18544 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18544 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18544 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18544 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18547 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18549 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18549 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18549 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18549 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18549 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18550 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18550 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18550 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18550 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18550 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18551 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18553 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18557 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18557 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18558 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18559 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18559 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18561 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18564 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18566 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18566 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18566 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18566 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18568 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18570 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18571 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18572 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18572 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18572 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18572 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18575 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18577 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18577 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header5
+18577 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header0
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header4
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header3
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header2
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Get mapKey : header1
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18578 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18579 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18581 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18585 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18586 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18586 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18586 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18586 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18586 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18588 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18589 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18589 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18589 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18590 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18590 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18592 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://a.com/a  is added to the db
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://b.com/b
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18596 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18597 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18597 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:2
+18597 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18597 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18597 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18599 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18599 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18600 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18600 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18600 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18600 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18603 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://b.com/b  is added to the db
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://c.com/c
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18606 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:4
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18607 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18609 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18610 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18610 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18611 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18611 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18611 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18613 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://c.com/c  is added to the db
+18616 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18616 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://d.com/d
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18617 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18618 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18618 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:6
+18618 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18618 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18618 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18620 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18621 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18622 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18622 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18623 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18623 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18626 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://d.com/d  is added to the db
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://e.com/e
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18630 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18631 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18631 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18631 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18632 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18632 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:8
+18632 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18632 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18632 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18635 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18636 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18637 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18637 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18637 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18637 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18639 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://e.com/e  is added to the db
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://f.com/f
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18643 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18644 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18644 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18644 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18644 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:10
+18644 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18645 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18645 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18646 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18647 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18647 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18647 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18647 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18648 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18649 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://f.com/f  is added to the db
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://g.com/g
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18652 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18653 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18653 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:12
+18653 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18653 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18653 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18655 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+18656 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Insert Bytescontent
+18656 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  __g__dirty
+18656 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  version
+18657 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Member name :  data
+18657 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Updating record
+18659 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The object  with key : http://g.com/g  is added to the db
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  url;     FieldTypeunion;     UNION
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:STRING, docField:url
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - String : http://a.com/a
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  content;     FieldTypeunion;     UNION
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:BYTES, docField:content
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  parsedContent;     FieldTypearray;     ARRAY
+18662 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  outlinks;     FieldTypemap;     MAP
+18663 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  headers;     FieldTypeunion;     UNION
+18663 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Load from DBObject (UNION), schemaType:MAP, docField:headers
+18665 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Name of all fields:  metadata;     FieldTyperecord;     RECORD
+18665 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt    #12:0
+18665 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - The record : mt
+18665 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  INT   name of field : version   docField : version   1
+18665 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Field :  MAP   name of field : data   docField : data   2
+18665 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="0.356" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray"/>
+  <testcase time="0.426" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut"/>
+  <testcase time="0.35" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes"/>
+  <testcase time="0.422" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap"/>
+  <testcase time="0.604" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields"/>
+  <testcase time="0.521" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults"/>
+</testsuite>
