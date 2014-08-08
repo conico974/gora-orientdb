@@ -186,7 +186,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             className.createProperty("id",OType.STRING);
             className.createIndex(mapping.getOClassName()+".id", OClass.INDEX_TYPE.UNIQUE, "id");
             odb.getMetadata().getSchema().save();
-            odb.getMetadata().getSchema().createClass("internalRecord", odb.getMetadata().getSchema().getClass("V"));
+            odb.getMetadata().getSchema().createClass("intern"+mapping.getOClassName(), odb.getMetadata().getSchema().getClass("V"));
             //odict = odb.getMetadata().getIndexManager().createIndex("kv", OClass.INDEX_TYPE.DICTIONARY.toString(), (OIndexDefinition)new OSimpleKeyIndexDefinition(OType.STRING), null, null, null);
         }else
             className = odb.getMetadata().getSchema().getClass(mapping.getOClassName());
@@ -198,7 +198,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
         if(schemaExists()){
             od.getMetadata().getSchema().dropClass(mapping.getOClassName());
-            od.getMetadata().getSchema().dropClass("internalRecord"); //TO DO add a property for internalRecord
+            od.getMetadata().getSchema().dropClass("intern"+mapping.getOClassName()); //TO DO add a property for internalRecord
         }
         od.close();
     }
@@ -207,7 +207,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     public boolean schemaExists() {
         boolean result = false;
         try {
-            result = (odb.getMetadata().getSchema().existsClass(mapping.getOClassName())&& odb.getMetadata().getSchema().existsClass("internalRecord"));
+            result = (odb.getMetadata().getSchema().existsClass(mapping.getOClassName())&& odb.getMetadata().getSchema().existsClass("intern"+mapping.getOClassName()));
         }catch(NullPointerException e) {
             LOG.error("NullPointerException while checking the existence of the schema");
         }
@@ -825,7 +825,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 if(intRecName.equals(mapping.getOClassName()))
                     record = odb.newInstance(mapping.getOClassName());
                 else
-                    record = odb.newInstance("internalRecord");
+                    record = odb.newInstance("intern"+mapping.getOClassName());
             }else
                 record = odb.load((ODocument)v.field(key)); 
             for (Field member: schem.getFields()) {
