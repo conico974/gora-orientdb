@@ -1,0 +1,64 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1409078554673
+Build-Jdk: 1.7.0_17
+Built-By: Nicolas
+Bundle-Description: The Apache Gora open source framework provides an in
+ -memory data model and     persistence for big data. Gora supports pers
+ isting to column stores, key value stores,     document stores and RDBM
+ Ss, and analyzing the data with extensive Apache Hadoop MapReduce     s
+ upport.
+Bundle-DocURL: http://www.apache.org/
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: Apache Gora :: OrientDB
+Bundle-SymbolicName: gora-orientdb
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 0.5.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.apache.gora.orientdb.query;uses:="org.apache.gora.st
+ ore,org.apache.gora.orientdb.store,org.apache.gora.query.impl,org.apach
+ e.gora.query,com.orientechnologies.orient.core.command,com.orientechnol
+ ogies.orient.core.record.impl,org.slf4j,com.orientechnologies.orient.co
+ re.db.document,com.orientechnologies.orient.core.sql.query,com.orientec
+ hnologies.orient.core.query,org.apache.gora.persistency,org.apache.gora
+ .persistency.impl";version="0.5.0.SNAPSHOT",org.apache.gora.orientdb.st
+ ore;uses:="org.jdom.input,org.jdom,org.slf4j,org.apache.avro,com.orient
+ echnologies.orient.core.config,com.orientechnologies.orient.core,org.ap
+ ache.avro.util,org.apache.gora.store.impl,org.apache.gora.query.impl,co
+ m.orientechnologies.orient.core.db,com.orientechnologies.orient.core.in
+ dex,org.apache.hadoop.conf,com.orientechnologies.orient.core.metadata.s
+ chema,org.apache.gora.persistency.impl,com.orientechnologies.orient.cor
+ e.engine,com.orientechnologies.orient.core.intent,org.apache.gora.store
+ ,com.orientechnologies.orient.client.remote,com.orientechnologies.orien
+ t.core.record,com.orientechnologies.orient.core.exception,com.orientech
+ nologies.orient.core.db.document,org.apache.gora.persistency,com.orient
+ echnologies.orient.core.metadata,com.orientechnologies.orient.core.id,c
+ om.orientechnologies.orient.enterprise.channel.binary,com.orientechnolo
+ gies.orient.core.record.impl,com.orientechnologies.orient.core.db.recor
+ d,org.apache.gora.orientdb.query,org.apache.gora.util,com.orientechnolo
+ gies.orient.core.type,org.apache.gora.query";version="0.5.0.SNAPSHOT"
+Import-Package: com.orientechnologies.orient.client.remote;version="[1.7
+ ,2)",com.orientechnologies.orient.core;version="[1.7,2)",com.orientechn
+ ologies.orient.core.command;version="[1.7,2)",com.orientechnologies.ori
+ ent.core.config;version="[1.7,2)",com.orientechnologies.orient.core.db;
+ version="[1.7,2)",com.orientechnologies.orient.core.db.document;version
+ ="[1.7,2)",com.orientechnologies.orient.core.db.record;version="[1.7,2)
+ ",com.orientechnologies.orient.core.engine;version="[1.7,2)",com.orient
+ echnologies.orient.core.exception;version="[1.7,2)",com.orientechnologi
+ es.orient.core.id;version="[1.7,2)",com.orientechnologies.orient.core.i
+ ndex;version="[1.7,2)",com.orientechnologies.orient.core.intent;version
+ ="[1.7,2)",com.orientechnologies.orient.core.metadata;version="[1.7,2)"
+ ,com.orientechnologies.orient.core.metadata.schema;version="[1.7,2)",co
+ m.orientechnologies.orient.core.query;version="[1.7,2)",com.orientechno
+ logies.orient.core.record;version="[1.7,2)",com.orientechnologies.orien
+ t.core.record.impl;version="[1.7,2)",com.orientechnologies.orient.core.
+ sql.query;version="[1.7,2)",com.orientechnologies.orient.core.type;vers
+ ion="[1.7,2)",com.orientechnologies.orient.enterprise.channel.binary;ve
+ rsion="[1.7,2)",org.apache.avro,org.apache.avro.util,org.apache.gora.pe
+ rsistency;version="[0.5,1)",org.apache.gora.persistency.impl;version="[
+ 0.5,1)",org.apache.gora.query;version="[0.5,1)",org.apache.gora.query.i
+ mpl;version="[0.5,1)",org.apache.gora.store;version="[0.5,1)",org.apach
+ e.gora.store.impl;version="[0.5,1)",org.apache.gora.util;version="[0.5,
+ 1)",org.apache.hadoop.conf,org.jdom,org.jdom.input,org.slf4j;version="[
+ 1.5,2)"
+Tool: Bnd-1.50.0

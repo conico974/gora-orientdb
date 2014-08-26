@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="32.82" errors="0" skipped="0" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\bin"/>
+    <property name="java.vm.version" value="23.7-b01"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="FR"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="C:\Users\Nicolas\gora\gora-orientdb"/>
+    <property name="java.runtime.version" value="1.7.0_17-b02"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\Nicolas\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 8"/>
+    <property name="maven.ext.class.path" value="C:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar"/>
+    <property name="classworlds.conf" value="C:\Program Files\NetBeans 7.4\java\maven\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.7.0_17\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files (x86)\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Smart Projects\IsoBuster;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\Java\jdk1.7.0_17\bin;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="51.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.2"/>
+    <property name="user.home" value="C:\Users\Nicolas"/>
+    <property name="user.timezone" value="Europe/Paris"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.7"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="user.name" value="Nicolas"/>
+    <property name="java.class.path" value="C:\Program Files\NetBeans 7.4\java\maven\boot\plexus-classworlds-2.4.jar"/>
+    <property name="java.vm.specification.version" value="1.7"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.7.0_17\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans 7.4\java\maven-nblib\netbeans-eventspy.jar -Pmaven-3 test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="fr"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.7.0_17"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_17\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_17\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="C:\Program Files\NetBeans 7.4\java\maven"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase time="2.232" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="addSeveralTopLevelDocumentFields"/>
+  <testcase time="1.007" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="addConflictingFields1"/>
+  <testcase time="0.919" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField"/>
+  <testcase time="0.902" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields"/>
+  <testcase time="0.954" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema"/>
+  <testcase time="0.968" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKey"/>
+  <testcase time="1.093" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryStartKey"/>
+  <testcase time="0.895" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested"/>
+  <testcase time="1.391" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange"/>
+  <testcase time="0.809" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive"/>
+  <testcase time="1.2" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema"/>
+  <testcase time="0.783" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema"/>
+  <testcase time="0.85" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive"/>
+  <testcase time="0.765" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields"/>
+  <testcase time="0.784" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting"/>
+  <testcase time="1.467" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery"/>
+  <testcase time="0.733" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance"/>
+  <testcase time="0.762" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested"/>
+  <testcase time="0.918" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey"/>
+  <testcase time="0.938" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists"/>
+  <testcase time="1.31" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema"/>
+  <testcase time="0.809" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage"/>
+  <testcase time="1.025" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields"/>
+  <testcase time="0.781" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetPartitions"/>
+  <testcase time="0.79" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults"/>
+  <testcase time="0.887" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields"/>
+  <testcase time="0.741" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet"/>
+  <testcase time="0.873" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery"/>
+  <testcase time="0.771" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap"/>
+  <testcase time="0.748" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes"/>
+  <testcase time="0.772" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut"/>
+  <testcase time="0.822" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete"/>
+  <testcase time="0.893" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray"/>
+  <testcase time="1.228" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate"/>
+</testsuite>

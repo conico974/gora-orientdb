@@ -506,6 +506,8 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     
     private DirtyMapWrapper fromDBMap(ODocument doc, Schema schem, String vertf){
         DirtyMapWrapper result = null;
+        if(!doc.containsField(vertf))
+            return null;
         Map<String,Object> map = doc.field(vertf);
         /*if(map.size()==0)
             return result;*/
@@ -514,7 +516,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 // ensure Key decoding -> middle dots replaced with dots
                 // FIXME: better approach ?
                 String oKey = e.getKey().replace("\u00B7", "."); 
-
+                
                 switch(schem.getValueType().getType()) {
                 case STRING:
                         rmap.put(new Utf8(oKey), new Utf8((String) e.getValue()));
@@ -685,7 +687,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 LOG.warn("No corresponding VertexField for :"+field.name());
                 continue;
             }
-            if(persistent.get(i)!=null){
+            if(persistent.isDirty(field.name())){
                 try{
                 putAsOrientVertex(field,v,docf,persistent.get(i),field.schema(),od);
                 }catch(Exception e){
@@ -719,7 +721,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             if(docf == null)
                 continue;
             
-            if(persistent.get(i) != null ){
+            if(persistent.isDirty(field.name())){
                 putAsOrientVertex(field,v,docf,persistent.get(i),field.schema(),od);
                 persistent.clearDirty(i);
             }
