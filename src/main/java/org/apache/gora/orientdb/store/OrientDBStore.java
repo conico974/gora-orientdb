@@ -286,19 +286,14 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         query.setFields(null);
         String quer = orientQuery.getSQLQuery(query, mapping);
         orientResult.setOdb(odb);
-        List<ODocument> result;
-        int cursor = 0;
         try{
-            result = odb.query(new OSQLSynchQuery<ODocument>(quer));
-            orientResult.setItVert(result);
-            for(int i=0; i<result.size();i++){
-                odb.delete((ORID)result.get(i).getIdentity());
-                //orientResult.next();
-                cursor = i;
+            orientResult.initResult(quer, odb);
+            while(orientResult.next()){
+                odb.delete(orientResult.getCurrentDocument());
             }
         } catch (Exception ex) {
-            LOG.error("Error deleteByQuery at position {}"+orientResult.getCursor(),ex.fillInStackTrace());
-            return cursor;
+            LOG.error("Error deleteByQuery at position {}"+orientResult.getOffset(),ex.fillInStackTrace());
+            return -1;
         }
         return 0;
     }
@@ -311,16 +306,12 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         OrientDBQuery orientQuery = new OrientDBQuery(this);
         OrientDBResult orientResult = new OrientDBResult(this,orientQuery);
         orientResult.setOdb(odb);
-        List<ODocument> result = null;
         String quer = orientQuery.getSQLQuery(query, mapping);
         try{
             LOG.debug("The query is : "+quer);
-            if(quer!=null)
-                result = odb.query(new OSQLSynchQuery<ODocument>(quer));
-            //odb.commit();
+            orientResult.initResult(quer, odb);
             
-            orientResult.setItVert(result);
-            LOG.debug("OrientResult size : "+orientResult.getItVert().size());
+            LOG.debug("OrientResult size : "+orientResult.getSize());
         }catch(OResponseProcessingException e){
             LOG.error("Unable to execute the query {}",e.fillInStackTrace());
         }finally{

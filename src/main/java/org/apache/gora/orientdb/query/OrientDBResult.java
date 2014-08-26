@@ -16,18 +16,14 @@
 
 package org.apache.gora.orientdb.query;
 
-import com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool;
+import com.orientechnologies.orient.core.command.OCommandResultListener;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
-import com.orientechnologies.orient.core.exception.ORecordNotFoundException;
-import com.orientechnologies.orient.core.id.ORID;
-import com.orientechnologies.orient.core.id.ORecordId;
 import com.orientechnologies.orient.core.record.impl.ODocument;
-import com.tinkerpop.blueprints.Vertex;
+import com.orientechnologies.orient.core.sql.query.OSQLAsynchQuery;
+import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
+import java.util.concurrent.SynchronousQueue;
 import org.apache.gora.orientdb.store.OrientDBStore;
-import org.apache.gora.persistency.Persistent;
 import org.apache.gora.persistency.impl.PersistentBase;
 import org.apache.gora.query.Query;
 import org.apache.gora.query.impl.ResultBase;
@@ -35,10 +31,6 @@ import org.apache.gora.store.DataStore;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.apache.gora.orientdb.store.OrientDBStore.nameOfHost;
-import static org.apache.gora.orientdb.store.OrientDBStore.nameOfPassword;
-import static org.apache.gora.orientdb.store.OrientDBStore.nameOfUrl;
-import static org.apache.gora.orientdb.store.OrientDBStore.nameOfUser;
 
 /**
  *
@@ -47,88 +39,94 @@ import static org.apache.gora.orientdb.store.OrientDBStore.nameOfUser;
 public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T> {
     
     public static final Logger LOG = LoggerFactory.getLogger(OrientDBResult.class);
-    
-    private List<ODocument> itVert;
-    private int cursor;
+        
+    private final SynchronousQueue<ODocument> synchQueue = new SynchronousQueue();
+    private String queryStr;
+    private OSQLAsynchQuery<ODocument> asynchQuer;
     private ODatabaseDocumentTx odb;
+    private long size;
+    private ODocument currentDocument;
 
-    public int getCursor() {
-        return cursor;
+    public ODocument getCurrentDocument() {
+        return currentDocument;
     }
 
-    public void setCursor(int cursor) {
-        this.cursor = cursor;
-    }
-    
     public void setOdb(ODatabaseDocumentTx odb) {
         this.odb = odb;
     }
 
+    public long getSize() {
+        return size;
+    }
     
-    public List<ODocument> getItVert() {
-        return itVert;
-    }
-
-    public void setItVert(List<ODocument> itVert) {
-        this.itVert = itVert;
-    }
-
+    
+    
     public OrientDBResult(DataStore<K, T> dataStore, Query<K, T> query) {
         super(dataStore, query);
-        cursor = 1;
+        offset=0;
+    }
+    
+    public void initResult(String quer, final ODatabaseDocumentTx odb){
+        this.queryStr= quer;
+        size = ((ODocument)odb.query(new OSQLSynchQuery("select count(*) from ("+queryStr+")")).get(0)).field("count"); // Compute the number of result
+        asynchQuer = new OSQLAsynchQuery(queryStr,new OCommandResultListener(){
+        @Override
+        public boolean result(Object o) {
+            ODocument doc = (ODocument)o;
+            try {
+                synchQueue.put(doc);
+            } catch (InterruptedException ex) {
+                LOG.error("",ex.fillInStackTrace());                       
+            }
+            return true;
+        }
+
+        @Override
+        public void end() {
+        }
+        
+    });    
+        Thread t = new Thread(new Runnable(){
+
+            @Override
+            public void run() {
+                odb.command(asynchQuer).execute();
+            }
+            
+        });
+        t.start();
     }
 
     @Override
     protected boolean nextInner() throws IOException {
-        if(itVert==null)
+        if(offset==size)
             return false;
-        odb = OrientDBStore.factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
-        odb.commit();
-        odb.begin();
-        ODocument obj=null;
-        if(cursor <= itVert.size()) {
-            
-                //if(odb.existsUserObjectByRID((ORID)itVert.get(cursor-1)))
-            for(int i=1;i<OrientDBStore.MAX_RETRIES; i++){
-                try{
-                    obj = itVert.get(cursor-1);
-                    break;
-                }catch(ORecordNotFoundException e){
-                    odb.reload();
-                    LOG.warn("No object with this id : "+(ORID)itVert.get(cursor-1)+"   Retry n° : "+i);
-                }
-            }
-                //else
-                if(obj==null)
-                    throw new IOException("Object don't exist");
-                
-                cursor++;
-                offset=cursor;
-                this.key = (K) obj.field("id");
-                try{
-                this.persistent = ((OrientDBStore<K, T>) getDataStore()).newInstanceT(obj, getQuery().getFields());
-                odb.commit();
-                odb.close();
-            }catch(Exception e) {
-                LOG.error("Error in OrientDBResult at nextInner :",e.fillInStackTrace());
-                throw new IOException(e.initCause(e));
-            }
-            //this.persistent.clearDirty();
-            //LOG.info("OrientDBResult cursor : "+cursor+"  For key :"+obj.field("id").toString());
-            return true;
-        }else
-            return false;
+        ODocument obj = null;
+        try {
+            obj = synchQueue.take();
+            currentDocument = obj;
+        }catch(InterruptedException e){
+            LOG.error("Interrupted Exception",e.fillInStackTrace());
+        }
+        this.key = (K)obj.field("id");
+        try{
+            this.persistent = ((OrientDBStore<K, T>) getDataStore()).newInstanceT(obj, getQuery().getFields());
+            LOG.info("Retrieving record with key :"+this.key);
+        }catch(Exception e){
+            LOG.error("Generic exception on retrieving record from Query",e.fillInStackTrace());
+        }
+        return true;
     }
 
     @Override
     public float getProgress() throws IOException, InterruptedException {
-        float result = (float)itVert.size()/(float)cursor;
+        float result = (float)offset/(float)size;
         return result;
     }
     
     @Override
     public void close() throws IOException{
-        cursor=1;
+        offset=0;
     }
     
 }
