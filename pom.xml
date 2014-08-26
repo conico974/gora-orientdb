@@ -132,12 +132,12 @@
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-core</artifactId>
-            <version>1.7-rc1</version>
+            <version>1.7.7</version>
         </dependency>
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-graphdb</artifactId>
-            <version>1.7-rc1</version>
+            <version>1.7.7</version>
         </dependency>
         <dependency>
             <groupId>jdom</groupId>
@@ -174,7 +174,7 @@
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orient-commons</artifactId>
-            <version>1.7-rc1</version>
+            <version>1.7.7</version>
         </dependency>
     </dependencies>
 

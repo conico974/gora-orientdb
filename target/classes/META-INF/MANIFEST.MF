@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1407238794313
+Bnd-LastModified: 1408983859603
 Build-Jdk: 1.7.0_17
 Built-By: Nicolas
 Bundle-Description: The Apache Gora open source framework provides an in
@@ -16,19 +16,19 @@ Bundle-Vendor: The Apache Software Foundation
 Bundle-Version: 0.5.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Export-Package: org.apache.gora.orientdb.query;uses:="org.apache.gora.st
- ore,org.apache.gora.query.impl,org.apache.gora.query,com.orientechnolog
- ies.orient.core.record,com.orientechnologies.orient.core.exception,org.
- slf4j,com.orientechnologies.orient.core.db.document,org.apache.gora.per
- sistency,com.orientechnologies.orient.core.db,com.orientechnologies.ori
- ent.core.id,com.orientechnologies.orient.core.record.impl,org.apache.go
- ra.persistency.impl,org.apache.gora.orientdb.store";version="0.5.0.SNAP
- SHOT",org.apache.gora.orientdb.store;uses:="org.apache.avro,org.jdom.in
- put,org.jdom,org.slf4j,com.orientechnologies.orient.core.config,com.ori
- entechnologies.orient.core,org.apache.avro.util,org.apache.gora.store.i
- mpl,org.apache.gora.query.impl,com.orientechnologies.orient.core.db,com
- .orientechnologies.orient.core.index,org.apache.hadoop.conf,com.oriente
- chnologies.orient.core.metadata.schema,org.apache.gora.persistency.impl
- ,com.orientechnologies.orient.core.engine,org.apache.gora.store,com.ori
+ ore,org.apache.gora.orientdb.store,org.apache.gora.query.impl,org.apach
+ e.gora.query,com.orientechnologies.orient.core.exception,org.slf4j,com.
+ orientechnologies.orient.core.db.document,com.orientechnologies.orient.
+ core.db,org.apache.gora.persistency,com.orientechnologies.orient.core.i
+ d,com.orientechnologies.orient.core.record.impl,org.apache.gora.persist
+ ency.impl";version="0.5.0.SNAPSHOT",org.apache.gora.orientdb.store;uses
+ :="org.jdom.input,org.jdom,org.slf4j,org.apache.avro,com.orientechnolog
+ ies.orient.core.config,com.orientechnologies.orient.core,org.apache.avr
+ o.util,org.apache.gora.store.impl,org.apache.gora.query.impl,com.orient
+ echnologies.orient.core.db,com.orientechnologies.orient.core.index,org.
+ apache.hadoop.conf,com.orientechnologies.orient.core.metadata.schema,or
+ g.apache.gora.persistency.impl,com.orientechnologies.orient.core.engine
+ ,com.orientechnologies.orient.core.intent,org.apache.gora.store,com.ori
  entechnologies.orient.client.remote,com.orientechnologies.orient.core.r
  ecord,com.orientechnologies.orient.core.exception,com.orientechnologies
  .orient.core.query,com.orientechnologies.orient.core.db.document,org.ap
@@ -47,18 +47,19 @@ Import-Package: com.orientechnologies.orient.client.remote;version="[1.7
  on="[1.7,2)",com.orientechnologies.orient.core.engine;version="[1.7,2)"
  ,com.orientechnologies.orient.core.exception;version="[1.7,2)",com.orie
  ntechnologies.orient.core.id;version="[1.7,2)",com.orientechnologies.or
- ient.core.index;version="[1.7,2)",com.orientechnologies.orient.core.met
- adata;version="[1.7,2)",com.orientechnologies.orient.core.metadata.sche
- ma;version="[1.7,2)",com.orientechnologies.orient.core.query;version="[
- 1.7,2)",com.orientechnologies.orient.core.record;version="[1.7,2)",com.
- orientechnologies.orient.core.record.impl;version="[1.7,2)",com.oriente
- chnologies.orient.core.sql.query;version="[1.7,2)",com.orientechnologie
- s.orient.core.type;version="[1.7,2)",com.orientechnologies.orient.enter
- prise.channel.binary;version="[1.7,2)",org.apache.avro,org.apache.avro.
- util,org.apache.gora.persistency;version="[0.5,1)",org.apache.gora.pers
- istency.impl;version="[0.5,1)",org.apache.gora.query;version="[0.5,1)",
- org.apache.gora.query.impl;version="[0.5,1)",org.apache.gora.store;vers
- ion="[0.5,1)",org.apache.gora.store.impl;version="[0.5,1)",org.apache.g
- ora.util;version="[0.5,1)",org.apache.hadoop.conf,org.jdom,org.jdom.inp
- ut,org.slf4j;version="[1.5,2)"
+ ient.core.index;version="[1.7,2)",com.orientechnologies.orient.core.int
+ ent;version="[1.7,2)",com.orientechnologies.orient.core.metadata;versio
+ n="[1.7,2)",com.orientechnologies.orient.core.metadata.schema;version="
+ [1.7,2)",com.orientechnologies.orient.core.query;version="[1.7,2)",com.
+ orientechnologies.orient.core.record;version="[1.7,2)",com.orientechnol
+ ogies.orient.core.record.impl;version="[1.7,2)",com.orientechnologies.o
+ rient.core.sql.query;version="[1.7,2)",com.orientechnologies.orient.cor
+ e.type;version="[1.7,2)",com.orientechnologies.orient.enterprise.channe
+ l.binary;version="[1.7,2)",org.apache.avro,org.apache.avro.util,org.apa
+ che.gora.persistency;version="[0.5,1)",org.apache.gora.persistency.impl
+ ;version="[0.5,1)",org.apache.gora.query;version="[0.5,1)",org.apache.g
+ ora.query.impl;version="[0.5,1)",org.apache.gora.store;version="[0.5,1)
+ ",org.apache.gora.store.impl;version="[0.5,1)",org.apache.gora.util;ver
+ sion="[0.5,1)",org.apache.hadoop.conf,org.jdom,org.jdom.input,org.slf4j
+ ;version="[1.5,2)"
 Tool: Bnd-1.50.0

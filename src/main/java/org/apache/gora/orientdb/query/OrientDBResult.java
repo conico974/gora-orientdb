@@ -91,7 +91,8 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
                 //if(odb.existsUserObjectByRID((ORID)itVert.get(cursor-1)))
             for(int i=1;i<OrientDBStore.MAX_RETRIES; i++){
                 try{
-                    obj = odb.load((ORID)itVert.get(cursor-1));
+                    obj = itVert.get(cursor-1);
+                    break;
                 }catch(ORecordNotFoundException e){
                     odb.reload();
                     LOG.warn("No object with this id : "+(ORID)itVert.get(cursor-1)+"   Retry n° : "+i);
@@ -113,7 +114,7 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
                 throw new IOException(e.initCause(e));
             }
             //this.persistent.clearDirty();
-            LOG.info("OrientDBResult cursor : "+cursor+"  For key :"+obj.field("id").toString());
+            //LOG.info("OrientDBResult cursor : "+cursor+"  For key :"+obj.field("id").toString());
             return true;
         }else
             return false;

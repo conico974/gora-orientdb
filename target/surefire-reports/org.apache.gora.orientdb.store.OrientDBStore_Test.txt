@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.apache.gora.orientdb.store.OrientDBStore_Test
 -------------------------------------------------------------------------------
-Tests run: 34, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 61.063 sec <<< FAILURE!
-testUpdate(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 3.695 sec  <<< FAILURE!
+Tests run: 34, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 34.046 sec <<< FAILURE!
+testUpdate(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 1.274 sec  <<< FAILURE!
 java.lang.AssertionError
 	at org.junit.Assert.fail(Assert.java:92)
 	at org.junit.Assert.assertTrue(Assert.java:43)

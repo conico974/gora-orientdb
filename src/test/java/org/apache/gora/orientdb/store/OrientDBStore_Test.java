@@ -112,7 +112,7 @@ public class OrientDBStore_Test extends DataStoreTestBase{
         prop.setProperty("gora.datastore.orientdb.host", "remote");
         prop.setProperty("gora.datastore.orientdb.url", "localhost:2424/searchDB");
         prop.setProperty("gora.datastore.orientdb.user","root");
-        prop.setProperty("gora.datastore.orientdb.password","220BD111ECEDC58A30C4062C989F642BBA27338010BC570A6CBD3724E2B28F2B");
+        prop.setProperty("gora.datastore.orientdb.password","6E7B7BC3D78917BE78D150684CF8EC73BF675D12EE79836CC1FA476F88B5ECC6");
         prop.setProperty("gora.datastore.orientdb.mapping.file","C:\\Users\\Nicolas\\gora\\gora-orientdb\\src\\test\\resources\\gora-orientdb-mapping.xml");
         try {
             store.initialize(String.class, Employee.class, prop);
@@ -131,7 +131,7 @@ public class OrientDBStore_Test extends DataStoreTestBase{
         prop.setProperty("gora.datastore.orientdb.host", "remote");
         prop.setProperty("gora.datastore.orientdb.url", "localhost:2424/searchDB");
         prop.setProperty("gora.datastore.orientdb.user","root");
-        prop.setProperty("gora.datastore.orientdb.password","220BD111ECEDC58A30C4062C989F642BBA27338010BC570A6CBD3724E2B28F2B");
+        prop.setProperty("gora.datastore.orientdb.password","6E7B7BC3D78917BE78D150684CF8EC73BF675D12EE79836CC1FA476F88B5ECC6");
         prop.setProperty("gora.datastore.orientdb.mapping.file","C:\\Users\\Nicolas\\gora\\gora-orientdb\\src\\test\\resources\\gora-orientdb-mapping.xml");
         try {
             store.initialize(String.class, WebPage.class, prop);

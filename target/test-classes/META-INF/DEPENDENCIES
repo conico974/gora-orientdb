@@ -53,8 +53,6 @@ From: 'an unknown organization'
 
   - Jettison (http://codehaus.org/jettison/) org.codehaus.jettison:jettison:bundle:1.3.3
     License: Apache License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0)
-  - snappy (http://github.com/dain/snappy) org.iq80.snappy:snappy:jar:0.3
-    License: Apache License 2.0  (http://www.apache.org/licenses/LICENSE-2.0.html)
   - Javassist (http://www.javassist.org/) org.javassist:javassist:jar:3.16.1-GA
     License: MPL 1.1  (http://www.mozilla.org/MPL/MPL-1.1.html)    License: LGPL 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)    License: Apache License 2.0  (http://www.apache.org/licenses/)
   - spring-aop  org.springframework:spring-aop:jar:3.0.6.RELEASE
@@ -175,27 +173,23 @@ From: 'Oracle Corporation' (http://www.oracle.com/)
     License: CDDL 1.1  (https://glassfish.java.net/public/CDDL+GPL_1_1.html)    License: GPL2 w/ CPE  (https://glassfish.java.net/public/CDDL+GPL_1_1.html)
 
 From: 'Orient Technologies' (http://www.orientechnologies.com)
-  - Orient Commons (http://www.orientechnologies.com/orient-commons) com.orientechnologies:orient-commons:jar:1.7-rc1
+  - Orient Commons (http://www.orientechnologies.com/orient-commons) com.orientechnologies:orient-commons:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - Orient Commons (http://www.orientechnologies.com/orient-commons) com.orientechnologies:orient-commons:jar:1.7-rc1
+  - OrientDB Client (http://www.orientechnologies.com/orientdb-client) com.orientechnologies:orientdb-client:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Client (http://www.orientechnologies.com/orientdb-client) com.orientechnologies:orientdb-client:jar:1.7-rc1
+  - OrientDB Core (http://www.orientechnologies.com/orientdb-core) com.orientechnologies:orientdb-core:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Core (http://www.orientechnologies.com/orientdb-core) com.orientechnologies:orientdb-core:jar:1.7-rc1
+  - OrientDB Enterprise (http://www.orientechnologies.com/orientdb-enterprise) com.orientechnologies:orientdb-enterprise:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Core (http://www.orientechnologies.com/orientdb-core) com.orientechnologies:orientdb-core:jar:1.7-rc1
+  - OrientDB GraphDB (http://www.orientechnologies.com/orientdb-graphdb) com.orientechnologies:orientdb-graphdb:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Enterprise (http://www.orientechnologies.com/orientdb-enterprise) com.orientechnologies:orientdb-enterprise:jar:1.7-rc1
+  - OrientDB Native OS Code (http://www.orientechnologies.com/orientdb-nativeos) com.orientechnologies:orientdb-nativeos:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB GraphDB (http://www.orientechnologies.com/orientdb-graphdb) com.orientechnologies:orientdb-graphdb:jar:1.7-rc1
+  - OrientDB Object (http://www.orientechnologies.com/orientdb-object) com.orientechnologies:orientdb-object:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Native OS Code (http://www.orientechnologies.com/orientdb-nativeos) com.orientechnologies:orientdb-nativeos:jar:1.7-rc1
+  - OrientDB Server (http://www.orientechnologies.com/orientdb-server) com.orientechnologies:orientdb-server:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Object (http://www.orientechnologies.com/orientdb-object) com.orientechnologies:orientdb-object:jar:1.7-rc1
-    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Server (http://www.orientechnologies.com/orientdb-server) com.orientechnologies:orientdb-server:jar:1.7-rc1
-    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Tools (http://www.orientechnologies.com/orientdb-tools) com.orientechnologies:orientdb-tools:jar:1.7-rc1
+  - OrientDB Tools (http://www.orientechnologies.com/orientdb-tools) com.orientechnologies:orientdb-tools:jar:1.7.7
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 From: 'QOS.ch' (http://www.qos.ch)

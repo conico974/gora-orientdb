@@ -18,6 +18,7 @@ package org.apache.gora.orientdb.store;
 
 import com.orientechnologies.orient.client.remote.OEngineRemote;
 import com.orientechnologies.orient.client.remote.OServerAdmin;
+import com.orientechnologies.orient.client.remote.OStorageRemoteThread;
 import com.orientechnologies.orient.core.Orient;
 import com.orientechnologies.orient.core.config.OGlobalConfiguration;
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool;
@@ -30,10 +31,13 @@ import com.orientechnologies.orient.core.exception.OStorageException;
 import com.orientechnologies.orient.core.exception.OTransactionException;
 import com.orientechnologies.orient.core.id.ORID;
 import com.orientechnologies.orient.core.index.OIndex;
+import com.orientechnologies.orient.core.intent.OIntentMassiveInsert;
+import com.orientechnologies.orient.core.intent.OIntentMassiveRead;
 import com.orientechnologies.orient.core.metadata.schema.OClass;
 import com.orientechnologies.orient.core.metadata.schema.OType;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 import com.orientechnologies.orient.core.sql.query.OSQLSynchQuery;
+import com.orientechnologies.orient.core.storage.OStorageEmbedded;
 import com.orientechnologies.orient.enterprise.channel.binary.OResponseProcessingException;
 
 import java.io.IOException;
@@ -149,7 +153,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             OGlobalConfiguration.CACHE_LEVEL1_ENABLED.setValue(false);
             Orient.instance().registerEngine(new OEngineRemote());
             factory = new ODatabaseDocumentPool();
-            factory.setup(1,100);
+            factory.setup(1,500);
             odb = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);  // replace by factory.acquire
         
             LOG.info("Initialized Orient Store for host {} and url {}", 
@@ -177,35 +181,33 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
 
     @Override
     public void createSchema() {
-        //graph = factory.getTx();
-       // if( graph == null)
-         //   throw new IllegalStateException("Impossible to create schema. No database loaded");
-        odb = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
+        ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
         if(!schemaExists()) {
-            className = odb.getMetadata().getSchema().createClass(mapping.getOClassName(),odb.getMetadata().getSchema().getClass("V"));
+            className = od.getMetadata().getSchema().createClass(mapping.getOClassName(),od.getMetadata().getSchema().getClass("V"));
             className.createProperty("id",OType.STRING);
             className.createIndex(mapping.getOClassName()+".id", OClass.INDEX_TYPE.UNIQUE, "id");
-            odb.getMetadata().getSchema().save();
-            odb.getMetadata().getSchema().createClass("intern"+mapping.getOClassName(), odb.getMetadata().getSchema().getClass("V"));
-            //odict = odb.getMetadata().getIndexManager().createIndex("kv", OClass.INDEX_TYPE.DICTIONARY.toString(), (OIndexDefinition)new OSimpleKeyIndexDefinition(OType.STRING), null, null, null);
+            od.getMetadata().getSchema().createClass("intern"+mapping.getOClassName(), od.getMetadata().getSchema().getClass("V"));
+            od.getMetadata().getSchema().save();
         }else
-            className = odb.getMetadata().getSchema().getClass(mapping.getOClassName());
-        LOG.warn("Class {} has been created", new Object[]{mapping.getOClassName()});
+            className = od.getMetadata().getSchema().getClass(mapping.getOClassName());
+        LOG.warn("Class {} and {} has been created", new Object[]{mapping.getOClassName(),"intern"+mapping.getOClassName()});
     }
 
     @Override
     public void deleteSchema() {
-        ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
+        //ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
+        //od.commit(); 
         if(schemaExists()){
-            od.getMetadata().getSchema().dropClass(mapping.getOClassName());
-            od.getMetadata().getSchema().dropClass("intern"+mapping.getOClassName()); //TO DO add a property for internalRecord
+            odb.getMetadata().getSchema().dropClass(mapping.getOClassName());
+            odb.getMetadata().getSchema().dropClass("intern"+mapping.getOClassName()); //TO DO add a property for internalRecord
         }
-        od.close();
+        //od.close();
     }
 
     @Override
     public boolean schemaExists() {
         boolean result = false;
+        odb.commit();
         try {
             result = (odb.getMetadata().getSchema().existsClass(mapping.getOClassName())&& odb.getMetadata().getSchema().existsClass("intern"+mapping.getOClassName()));
         }catch(NullPointerException e) {
@@ -222,10 +224,12 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         //String oKey = key.toString().replace("\u00B7", ".");
         if(odict.get(key)==null)
             return null;
+        odb.commit();
         ODocument result = odb.getRecord((OIdentifiable)odict.get(key));
         odb.commit();
-        if(result==null)
-            throw new IllegalStateException("No vertex with this key : "+key);
+        if(result==null){
+            return null;
+        }
         T persistent = null;
         try{
             persistent = newInstanceT(result,fields);
@@ -250,7 +254,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 putUpdate(key,obj);
                 //odb.commit();
             }catch(Exception e){  //Temporary
-                LOG.info("Error on commiting update",e.fillInStackTrace());
+                LOG.error("Error on commiting update",e.fillInStackTrace());
             }finally{
                 
                 
@@ -258,7 +262,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             LOG.info("The object  with key : "+key.toString()+"  is added to the db");
         }
         else
-            LOG.warn("Ignored putting object {} in the store as it is not dirty",new Object[]{obj});
+            LOG.debug("Ignored putting object {} in the store as it is not dirty",new Object[]{obj});
         
         obj.clearDirty();
     }
@@ -276,8 +280,11 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     public long deleteByQuery(Query<K, T> query) {
         odb.begin();
         query.setLocalFilterEnabled(false);
-        OrientDBResult orientResult = new OrientDBResult(this,query);
-        String quer = OrientDBQuery.getSQLQuery(query, mapping.getOClassName());
+        OrientDBQuery orientQuery = new OrientDBQuery(this);
+        orientQuery.setFields(null);
+        OrientDBResult orientResult = new OrientDBResult(this,orientQuery);
+        query.setFields(null);
+        String quer = orientQuery.getSQLQuery(query, mapping);
         orientResult.setOdb(odb);
         List<ODocument> result;
         int cursor = 0;
@@ -285,7 +292,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             result = odb.query(new OSQLSynchQuery<ODocument>(quer));
             orientResult.setItVert(result);
             for(int i=0; i<result.size();i++){
-                odb.delete((ORID)result.get(i));
+                odb.delete((ORID)result.get(i).getIdentity());
                 //orientResult.next();
                 cursor = i;
             }
@@ -298,22 +305,26 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
 
     @Override
     public Result<K, T> execute(Query<K, T> query) {
+        odb.declareIntent(new OIntentMassiveRead());
         odb.commit();
         odb.begin();
         OrientDBQuery orientQuery = new OrientDBQuery(this);
         OrientDBResult orientResult = new OrientDBResult(this,orientQuery);
         orientResult.setOdb(odb);
         List<ODocument> result = null;
-        String quer = orientQuery.getSQLQuery(query, mapping.getOClassName());
+        String quer = orientQuery.getSQLQuery(query, mapping);
         try{
+            LOG.debug("The query is : "+quer);
             if(quer!=null)
                 result = odb.query(new OSQLSynchQuery<ODocument>(quer));
             //odb.commit();
-            LOG.warn("The query is : "+quer);
+            
             orientResult.setItVert(result);
-            LOG.warn("OrientResult size : "+orientResult.getItVert().size());
+            LOG.debug("OrientResult size : "+orientResult.getItVert().size());
         }catch(OResponseProcessingException e){
             LOG.error("Unable to execute the query {}",e.fillInStackTrace());
+        }finally{
+            odb.declareIntent(null);
         }
         return orientResult;
     }
@@ -374,7 +385,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     public T newInstanceT(ODocument doc, String[] fields) throws Exception {
         T persistent = newPersistent();
         try{
-        odb.begin();
+        //odb.begin();
         String[] dbFields = getFieldsToQuery(fields);
         
         for(String f : dbFields) {
@@ -386,15 +397,16 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             }
             
             Schema fieldSchem = field.schema();
-            LOG.info("Name of all fields:  "+f+";     FieldType"+fieldSchem.getType().getName()+";     "+fieldSchem.getType().name());
-            
-            Object result = fromDBObject(doc,field,fieldSchem,vertf);
+            LOG.debug("Name of all fields:  "+f+";     FieldType"+fieldSchem.getType().getName()+";     "+fieldSchem.getType().name());
+            Object result = fromDBObject(doc,field,fieldSchem,vertf);  
             if(result!=null)
                 persistent.put(field.pos(), result);
         }
         persistent.clearDirty();
+        }catch(NullPointerException e){
+            LOG.error("NullPointerException in NewInstanceT ",e.fillInStackTrace());
         }catch(Exception e) {
-            LOG.error("Erreur in newInstanceT",e.getCause());
+            LOG.error("Erreur in newInstanceT",e.fillInStackTrace());
         }
         return persistent;
         
@@ -469,7 +481,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 .getVertexField(recField.name()) : recField.name();
             if(!isValidFieldName(innerDocField))
                 continue;
-            LOG.info("Field :  "+recField.schema().getType()+"   name of field : "+recField.name()+"   docField : "+innerDocField+"   "+recField.pos());
+            LOG.debug("Field :  "+recField.schema().getType()+"   name of field : "+recField.name()+"   docField : "+innerDocField+"   "+recField.pos());
             record.put(recField.pos(),fromDBObject(rec,recField,recField.schema(),innerDocField));
         }
         return record;
@@ -564,7 +576,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 innerSchem = schem.getTypes().get(1);
             else
                 innerSchem = schem.getTypes().get(0);
-            LOG.info(
+            LOG.debug(
           "Load from DBObject (UNION), schemaType:{}, docField:{}",
           new Object[] { innerSchem.getType(), vertf});
             
@@ -581,26 +593,39 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
 
     private void putUpdate(K key, T obj) {
         ODocument v = null;
-        odb.begin();
-        if(odb==null)
+        ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl, nameOfUser, nameOfPassword);
+        //od.declareIntent(new OIntentMassiveInsert());
+        od.begin();
+        
+        if(od==null)
             throw new IllegalStateException("The database has not been correctly initialized");
-        OIndex<?> index = odb.getMetadata().getIndexManager().getIndex(mapping.getOClassName()+".id");
+        OIndex<?> index = od.getMetadata().getIndexManager().getIndex(mapping.getOClassName()+".id");
         OIdentifiable rec =null;
-        if(index!=null)
+        if(index!=null){
+            try{
             rec = (OIdentifiable)index.get(key);
+            }catch(Exception e){
+                LOG.error("Error on retrieving record from index",e.fillInStackTrace());
+            }
+        }
         if(rec!=null){
             for(int i=0; i<MAX_RETRIES; i++){
                 try{
                     v = (ODocument)rec.getRecord();
                     break;
-                }catch(ODatabaseException e) {
-                    v = (ODocument)rec.getRecord();
+                }catch(Exception e) {
+                    //v = (ODocument)rec.getRecord();
+                    LOG.warn("Unable to load the record Try n°:"+i+1);
                 }
             }
-            v = updateInstance(obj,v);
-            LOG.info("Updating record");
+            try{
+                v = updateInstance(obj,v,od);
+            }catch(Exception e){
+                LOG.error("Unknown exception on updateInstance",e.fillInStackTrace());
+            }
+            LOG.debug("Updating record");
         }else
-            v = newInstance(obj);
+            v = newInstance(obj,od);
         if(v==null)
             throw new IllegalStateException("Error on creating a new instance of : "+mapping.getOClassName());
         //ODocument res;
@@ -609,41 +634,48 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 //res = odb.newInstance(mapping.getOClassName());
                 if(rec == null)
                     v.field("id",key);
-                v.save();
-                odb.commit();
+                od.save(v);
+                //v.save();
+                od.commit();
                 break;
             }catch(OConcurrentModificationException e) {
                 //LOG.error("ConcurrentModificationException catched, retry the commit");
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(OTransactionException e){
                 //LOG.error("Generic exception while putting an object to the database",e.fillInStackTrace());
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(OStorageException e){
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(OResponseProcessingException e){
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(ConcurrentModificationException e){
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(ORecordNotFoundException e){
                 LOG.warn("The document has been modified retries commit n°: "+i);
                 v.reload();
-                v = updateInstance(obj,v);
+                v = updateInstance(obj,v,od);
             }catch(Exception e) {
                 LOG.error("Generic Exception at putUpdate",e.fillInStackTrace());
+            }finally {
+                try{
+                    od.close();
+                }catch(Exception e){
+                    LOG.error("ODatabaseException while closing database",e.fillInStackTrace());
+                }
             }
     }
     }
-    private ODocument updateInstance(T persistent, ODocument v) {
+    private ODocument updateInstance(T persistent, ODocument v, ODatabaseDocumentTx od) {
         //odb.begin();  //Last comment
         if(persistent == null)
             return null;
@@ -663,22 +695,27 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 continue;
             }
             if(persistent.get(i)!=null){
-                putAsOrientVertex(field,v,docf,persistent.get(i),field.schema());
+                try{
+                putAsOrientVertex(field,v,docf,persistent.get(i),field.schema(),od);
+                }catch(Exception e){
+                    LOG.error("Error on putAsOrientVertex",e.fillInStackTrace());
+                }
                 
                 persistent.clearDirty(i);
             }
         }
         return v;
     }
-    private ODocument newInstance(T persistent) {
-        odb.begin();
+    
+    private ODocument newInstance(T persistent, ODatabaseDocumentTx od) {
+        //odb.begin();
         if(persistent == null)
             return null;
         Schema schem = persistent.getSchema();
         if(!schemaExists())
             createSchema();
             
-        ODocument v = odb.newInstance(mapping.getOClassName());
+        ODocument v = od.newInstance(mapping.getOClassName());
         
         Iterator<Field> iter = schem.getFields().iterator();
                 
@@ -692,10 +729,11 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 continue;
             
             if(persistent.get(i) != null ){
-                putAsOrientVertex(field,v,docf,persistent.get(i),field.schema());
+                putAsOrientVertex(field,v,docf,persistent.get(i),field.schema(),od);
                 persistent.clearDirty(i);
             }
         }
+        //odb.commit();
         return v;
     }
     
@@ -731,7 +769,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     return 0;
   }
     
-    private void putAsOrientVertex(final Field field, final ODocument v ,final String key, final Object value, final Schema schem) {
+    private void putAsOrientVertex(final Field field, final ODocument v ,final String key, final Object value, final Schema schem, ODatabaseDocumentTx od) {
         try{
             if(value==null) {
                 v.removeField(key);
@@ -739,10 +777,10 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         switch(schem.getType()) {
 		case MAP:
                     if(value==null){
-                        LOG.info("Put map null");
+                        LOG.debug("Put map null");
                         v.field(key,(Object)null);
                     }else
-                        v.field(key, toOrientEmbeddedMap((Map<Utf8,?>)value,schem,field,v));
+                        v.field(key, toOrientEmbeddedMap((Map<Utf8,?>)value,schem,field,v,od));
                     break;
 		case ARRAY:
 			v.field(key, toOrientEmbeddedList((DirtyListWrapper) value, schem.getElementType().getType()));
@@ -755,7 +793,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                         break;
                 case BYTES:
 			// Beware of ByteBuffer not being safely serialized
-                            LOG.warn("Insert Bytes"+field.name());  //Temporary
+                            LOG.debug("Insert Bytes"+field.name());  //Temporary
                             v.field(key, ((ByteBuffer)value).array());
                             //v.setProperty(key, ((ByteBuffer) value).array());
 			break;
@@ -767,10 +805,10 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                         if(value==null) break;
                         LOG.debug("Union with value: " + value.toString() + " at index: " + schemaPos + " supported for field: " + field.name()+"  type of field : "+field.schema().getTypes().get(schemaPos).getType().name());
                         Schema unionSchema = field.schema().getTypes().get(schemaPos);//.getTypes().get(schemaPos); // Nawak
-                        putAsOrientVertex(field,v,key,value, unionSchema);
+                        putAsOrientVertex(field,v,key,value, unionSchema,od);
                         break;
 		case RECORD:                            
-                        v.field(key,toOrientDBDocument((Persistent)value,schem,v,key));
+                        v.field(key,toOrientDBDocument((Persistent)value,schem,v,key,od));
                         //v.addEdge(null, record);
 			break;
                 case NULL:
@@ -781,7 +819,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
 			v.field(key, value);
 			break;
 		}
-        odb.save(v);
+        //odb.save(v);
         //graph.shutdown();
         } catch(OConcurrentModificationException e) {
             //odb.rollback();
@@ -816,33 +854,36 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         return Type.NULL;
     }
     
-    private ODocument toOrientDBDocument(Persistent value,Schema schem, ODocument v, String key){ // TO DO don't use the key inside this function
+    private ODocument toOrientDBDocument(Persistent value,Schema schem, ODocument v, String key, ODatabaseDocumentTx od){ // TO DO don't use the key inside this function
         String intRecName = schem.getName();
         ODocument record = null;
+        od.begin();
         boolean emptyRecords;
         try{
             if(v.field(key)==null){
                 if(intRecName.equals(mapping.getOClassName()))
-                    record = odb.newInstance(mapping.getOClassName());
+                    record = od.newInstance(mapping.getOClassName());
                 else
-                    record = odb.newInstance("intern"+mapping.getOClassName());
+                    record = od.newInstance("intern"+mapping.getOClassName());
             }else
-                record = odb.load((ODocument)v.field(key)); 
+                record = od.load((ODocument)v.field(key)); 
             for (Field member: schem.getFields()) {
                     Object recValue = ((Persistent) value).get(member.pos());
                     String innerFieldName = (mapping.getVertexField(member.name())!=null) ? mapping.getVertexField(member.name()) : member.name();
-                    LOG.info("Member name :  "+innerFieldName);
+                    LOG.debug("Member name :  "+innerFieldName);
                     if(!isValidFieldName(innerFieldName))
                         continue;
-                    putAsOrientVertex(member,record,innerFieldName,recValue,member.schema());
+                    putAsOrientVertex(member,record,innerFieldName,recValue,member.schema(),od);
             }
+            od.commit();
         }catch(Exception e) {
             LOG.error("Generic error on Internal records",e.fillInStackTrace());
+        }finally {
         }
         return record;
     }
     
-    private Object toOrientEmbeddedMap(Map<Utf8, ?> jmap, Schema schem, Field field, ODocument v) {
+    private Object toOrientEmbeddedMap(Map<Utf8, ?> jmap, Schema schem, Field field, ODocument v, ODatabaseDocumentTx od) {
         // Handle null case
 	if (jmap == null) 
 		return null;
@@ -873,26 +914,26 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 case RECORD:
                     if ( e.getValue() == null ) break;
 			// FIXME Handle subtypes... certainly a better way to do that!
-                    LOG.info("Record in a map");
+                    LOG.debug("Record in a map");
                         schem.getClass();
 			ODocument record = odb.newInstance(mapping.getOClassName());
 			for (Field member: schem.getFields()) {
 				Object recValue = ((Persistent) e.getValue()).get(member.pos());
                                 String innerFieldName = (mapping.getVertexField(member.name())!=null) ? mapping.getVertexField(member.name()) : member.name();
-                                LOG.info("Member name :  "+innerFieldName);
+                                LOG.debug("Member name :  "+innerFieldName);
                                 if(!isValidFieldName(innerFieldName))
                                     continue;
-                                putAsOrientVertex(member,record,innerFieldName,recValue,member.schema());
+                                putAsOrientVertex(member,record,innerFieldName,recValue,member.schema(),od);
 			}
                         map.put(vKey, record);
                     break;
                 case UNION:
-                    LOG.info("Union in a map");
+                    LOG.debug("Union in a map");
                     int schemaPos = getUnionSchema(e.getValue(), schem);
                     if(e.getValue()==null) break;
                         LOG.debug("Union with value: " + e.getValue().toString() + " at index: " + schemaPos + " supported for field: " + field.name()+"  type of field : "+field.schema().getTypes().get(schemaPos).getType().name());
                         Schema unionSchema = field.schema().getTypes().get(schemaPos);//.getTypes().get(schemaPos); // Nawak
-                        putAsOrientVertex(field,v,vKey,e.getValue(), unionSchema);
+                        putAsOrientVertex(field,v,vKey,e.getValue(), unionSchema,od);
                     break;
                 case NULL:
                     map.put(vKey,null);

@@ -19,6 +19,8 @@ package org.apache.gora.orientdb.query;
 import com.orientechnologies.orient.core.record.impl.ODocument;
 import com.tinkerpop.blueprints.Vertex;
 import java.util.Iterator;
+import org.apache.gora.orientdb.store.OrientDBMapping;
+import org.apache.gora.orientdb.store.OrientDBStore;
 import org.apache.gora.persistency.impl.PersistentBase;
 import org.apache.gora.query.Query;
 import org.apache.gora.query.impl.QueryBase;
@@ -42,20 +44,40 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
         super(null);
     }
     
-    public static String getSQLQuery(Query<?,?> query,String className) {
-        String quer="select expand(rid) from index:"+className+".id";
+    public static String getSQLQuery(Query<?,?> query,OrientDBMapping mapping) {
+        String className = mapping.getOClassName();
+        String quer="(select expand(rid) from index:"+className+".id)";
         if ((query.getStartKey() != null) && (query.getEndKey() != null)
         && query.getStartKey().equals(query.getEndKey())) {
-            quer = "select expand(rid) from index:"+className+".id where key=\""+query.getStartKey()+"\"";
+            quer = "(select expand(rid) from index:"+className+".id where key=\""+query.getStartKey()+"\")";
         } else {
             if (query.getStartKey() != null && query.getEndKey()!=null)
-                quer = "select expand(rid) from index:"+className+".id where key between \""+query.getStartKey()+"\" and \""+query.getEndKey()+"\"";
+                quer = "(select expand(rid) from index:"+className+".id where key between \""+query.getStartKey()+"\" and \""+query.getEndKey()+"\")";
             else if (query.getEndKey() == null && query.getStartKey()!=null)
-                quer = "select expand(rid) from index:"+className+".id where key >=\""+query.getStartKey()+"\"";
+                quer = "(select expand(rid) from index:"+className+".id where key >=\""+query.getStartKey()+"\")";
             else if (query.getEndKey() != null)
-                quer = "select expand(rid) from index:"+className+".id where key <=\""+query.getEndKey()+"\"";
+                quer = "(select expand(rid) from index:"+className+".id where key <=\""+query.getEndKey()+"\")";
         }
-        return quer;
+        return project(query.getFields(),mapping)+quer;
+    }
+    
+    private static String project(String[] fields, OrientDBMapping mapping){
+        String result = "select id,";
+        int i=1;
+        if(fields==null){
+           // OrientDBStore.LOG.info("Query with null fields");
+            return "select * from ";
+        }
+        for(String field:fields){
+            if(i!=fields.length)
+                result=result+" "+mapping.getVertexField(field)+",";
+            else
+                result=result+" "+mapping.getVertexField(field);
+            i++;
+        }
+        
+        result=result+" from ";
+        return result;
     }
     
 }
