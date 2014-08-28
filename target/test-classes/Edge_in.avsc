@@ -1,0 +1,15 @@
+{
+    "name": "Edge_in",
+    "type" : "record",
+    "namespace" : "org.apache.gora.orientdb.storage",
+    "fields" : [
+                    {
+                        "name" : "label",
+                        "type" : ["string","null"]
+                    },
+                    {
+                        "name" : "target",
+                        "type" : "record"
+                    }
+                ]
+}

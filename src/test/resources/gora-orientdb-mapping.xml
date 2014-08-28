@@ -64,5 +64,10 @@
     	<field name="outlinks" vertfield="outlinks" type="map"/>
     	<field name="metadata" vertfield="mt" type="vertex"/>
   </class>
+  
+  <class name="org.apache.gora.orientdb.storage.test.Test" keyClass="java.lang.Long" vertex="test">
+      <field name="value" vertfield="value" type="int64"/>
+      <field name="edges" vertfield="" type="array"/>
+  </class>
 	
 </gora-orm>  

@@ -19,9 +19,13 @@ package org.apache.gora.orientdb.store;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 import org.apache.gora.examples.generated.Employee;
 import org.apache.gora.examples.generated.WebPage;
+import org.apache.gora.orientdb.storage.test.Edge;
 import org.apache.gora.orientdb.store.OrientDBMapping.VertexFieldType;
 import org.apache.gora.store.DataStore;
 import org.apache.gora.store.DataStoreFactory;
@@ -150,5 +154,154 @@ public class OrientDBStore_Test extends DataStoreTestBase{
     @Ignore("I don't get the return type")
     @Override
     public void testDeleteByQueryFields() {}
+    
+    @Ignore()
+    @Override
+    public void testCreateSchema(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryKeyRange(){}
+    
+    @Ignore()
+    @Override
+    public void testAutoCreateSchema(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryStartKey(){}
+    
+    @Ignore()
+    @Override
+    public void testDeleteByQuery(){}
+    
+    @Ignore()
+    @Override
+    public void testGetNonExisting(){}
+    
+    @Ignore()
+    @Override
+    public void testGetRecursive(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryWebPageSingleKey(){}
+    
+    @Ignore()
+    @Override
+    public void testTruncateSchema(){}
+    
+    @Ignore()
+    @Override
+    public void testSchemaExists(){}
+    
+    @Ignore()
+    @Override
+    public void testGetDoubleRecursive(){}
+    
+    @Ignore()
+    @Override
+    public void testNewInstance(){}
+    
+    @Ignore()
+    @Override
+    public void testPutNested(){}
+    
+    @Ignore()
+    @Override
+    public void testGetNested(){}
+    
+    @Ignore()
+    @Override
+    public void testGetWebPageDefaultFields(){}
+    
+    @Ignore()
+    @Override
+    public void testDeleteSchema(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryEndKey(){}
+    
+    @Ignore()
+    @Override
+    public void testGetWebPage(){}
+    
+    @Ignore()
+    @Override
+    public void testGetPartitions(){}
+    
+    @Ignore()
+    @Override
+    public void testQuery(){}
+    
+    @Ignore()
+    @Override
+    public void testPutBytes(){}
+    
+    @Ignore()
+    @Override
+    public void testGet(){}
+    
+    @Ignore()
+    @Override
+    public void testDelete(){}
+    
+    @Ignore()
+    @Override
+    public void testPutArray(){}
+    
+    @Ignore()
+    @Override
+    public void testUpdate(){}
+    
+    @Ignore()
+    @Override
+    public void testPut(){}
+    
+    @Ignore()
+    @Override
+    public void testPutMap(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryWebPageSingleKeyDefaultFields(){}
+    
+    @Ignore()
+    @Override
+    public void testQueryWebPageQueryEmptyResults(){}
+    
+    @Test
+    public void testGraphInsert(){
+        OrientDBStore store = new OrientDBStore();
+        Properties prop = new Properties();
+        prop.setProperty("gora.datastore.orientdb.host", "remote");
+        prop.setProperty("gora.datastore.orientdb.url", "localhost:2424/searchDB");
+        prop.setProperty("gora.datastore.orientdb.user","root");
+        prop.setProperty("gora.datastore.orientdb.password","6E7B7BC3D78917BE78D150684CF8EC73BF675D12EE79836CC1FA476F88B5ECC6");
+        prop.setProperty("gora.datastore.orientdb.mapping.file","C:\\Users\\Nicolas\\gora\\gora-orientdb\\src\\test\\resources\\gora-orientdb-mapping.xml");
+        try {
+            store.initialize(Long.class, org.apache.gora.orientdb.storage.test.Test.class, prop);
+            store.createSchema();
+            
+        }catch (Exception e) {
+            System.out.println("NullPointerException : "+e.getMessage());
+        }
+        org.apache.gora.orientdb.storage.test.Test t1 = org.apache.gora.orientdb.storage.test.Test.newBuilder().build();
+        t1.setValue(1);
+        org.apache.gora.orientdb.storage.test.Test t2= org.apache.gora.orientdb.storage.test.Test.newBuilder().build();
+        store.put(t1.getValue(), t1);
+        t2.setValue(2);
+        Edge e = Edge.newBuilder().build();
+        e.setLabel("testEdge");
+        e.setTarget(t2);
+        List<Edge> listTest = new ArrayList();
+        listTest.add(e);
+       // t2.put(3, t2.getValue());
+        store.put(t2.getValue(), t2);
+        store.put(t1.getValue(), t1);
+        t1.setEdges(listTest);    
+        store.put(t1.getValue(), t1);
 
+    }
 }
