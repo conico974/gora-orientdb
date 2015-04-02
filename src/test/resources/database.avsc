@@ -1,0 +1,66 @@
+{
+"name" : "Exchange",
+"type" : "record",
+"namespace" : "com.phinence.spark.storage",
+"fields" : [
+				{"name" : "Name", "type": ["string",null]},
+				{"name" : "Abrev", "type" : ["string",null]},
+				{"name" : "edges",
+				"type" : { "type" : "array",
+							"items" : {
+										"name" : "Edge",
+										"type" : ["EdgeExc","null"]
+									  }
+						 }
+				}
+			]
+}
+{
+"name" : "Company",
+"type" : "record",
+"namespace" : "com.phinence.spark.storage",
+"fields" : [
+				{"name" : "Name", "type" : ["string", null]},
+				{"name" : "Code", "type" : ["string", null]},
+				{"name" : "Ticker", "type" : ["string",null]},
+				{"name" : "edges",
+				"type" : { "type" : "array",
+							"items" : {
+										"name" : "Edge",
+										"type" : ["EdgeComp","null"]
+									  }
+						 }
+				}
+				
+			]
+}
+{
+"name" : "Ohlc",
+"type" : "record",
+"namespace" : "com.phinence.spark.storage",
+"fields" : [
+				{"name" : "Open", "type" : "float", "default" : 0.0},
+				{"name" : "High", "type": "float", "default" : 0.0},
+				{"name" : "Low", "type": "float", "default" : 0.0},
+				{"name" : "Close", "type": "float", "default" : 0.0},
+				{"name" : "Volume", "type" : "long", "default" : 0L}
+			]
+}
+{
+"name" : "EdgeExc",
+"type" : "record",
+"namespace" : "com.phinence.spark.storage",
+"fields" : [
+				{"name" : "label", "type" : ["string",null]},
+				{"name" : "target", "type" : ["Company",null]}
+			]
+}
+{
+"name" : "EdgeComp",
+"type" : "record",
+"namespace" : "com.phinence.spark.storage",
+"fields" : [
+				{"name" : "label", "type" : ["string",null]},
+				{"name" : "target", "type" : ["Ohlc",null]}
+			]
+}

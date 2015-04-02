@@ -90,7 +90,11 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
 
             @Override
             public void run() {
+                try{
                 odb.command(asynchQuer).execute();
+                }catch(Exception e){
+                    LOG.error(e.getMessage());
+                }
             }
             
         });

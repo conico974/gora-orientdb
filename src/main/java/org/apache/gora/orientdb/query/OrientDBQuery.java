@@ -58,7 +58,10 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
             else if (query.getEndKey() != null)
                 quer = "(select expand(rid) from index:"+className+".id where key <=\""+query.getEndKey()+"\")";
         }
-        return project(query.getFields(),mapping)+quer;
+        if(query instanceof OrientDBPartitionQuery){
+            return project(query.getFields(),mapping)+getPartitionQuery(quer,(OrientDBPartitionQuery)query);
+        }else
+            return project(query.getFields(),mapping)+quer;
     }
     
     private static String project(String[] fields, OrientDBMapping mapping){
@@ -77,6 +80,12 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
         }
         
         result=result+" from ";
+        return result;
+    }
+    
+    private static String getPartitionQuery(String quer, OrientDBPartitionQuery query){
+        String result;
+        result = "(select expand($c) let $a = "+quer+", $b = ( select from cluster:"+query.getClusterName()+" ), $c = intersect($a, $b))";
         return result;
     }
     

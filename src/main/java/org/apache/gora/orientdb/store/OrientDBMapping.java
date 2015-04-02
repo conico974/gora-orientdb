@@ -36,7 +36,8 @@ public class OrientDBMapping {
 		LIST,    // a list
                 MAP,     //a map
 		VERTEX, // a Vertex
-                UNION
+                UNION,
+                ARRAY
 	}
     
     private Pattern validOrientVertexField = 
@@ -49,12 +50,16 @@ public class OrientDBMapping {
     /** Mapping between the OrienDB Vertex fields and the class fields */
     private HashMap<String, String> vertexToClass = new HashMap<String, String>();
  
-    /** Mongo document description */
+    /** OrientDB document description */
     private HashMap<String, VertexFieldType> vertexFields = new HashMap<String, VertexFieldType>();
     
     public void renameOClass(String oldName, String newName) {
 		// FIXME
 	OClassName = newName;
+    }
+
+    public HashMap<String, VertexFieldType> getVertexFields() {
+        return vertexFields;
     }
 	
 	/** Getter for the name of the collection

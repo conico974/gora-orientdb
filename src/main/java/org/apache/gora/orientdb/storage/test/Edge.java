@@ -5,11 +5,23 @@
  */
 package org.apache.gora.orientdb.storage.test;  
 @SuppressWarnings("all")
-public class Edge extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
+public class Edge extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent, Vertex {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Edge\",\"namespace\":\"org.apache.gora.orientdb.storage.test\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"label\",\"type\":[\"string\",\"null\"],\"default\":\"null\"},{\"name\":\"target\",\"type\":[{\"type\":\"record\",\"name\":\"Test\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"value\",\"type\":\"int\",\"default\":0},{\"name\":\"edges\",\"type\":[{\"type\":\"array\",\"items\":\"Edge\"},\"null\"],\"default\":\"null\"}]},\"null\"],\"default\":\"null\"}]}");
 
   public int getFieldsCount(){
       return 2;
+  }
+  /**
+   * Key needed for graph insert
+   */
+  private Object key;
+  
+  public Object getKey(){
+      return key;
+  }
+  
+  public void setKey(Object key){
+      this.key = key;
   }
   /** Enum containing all data bean's fields. */
   public static enum Field {

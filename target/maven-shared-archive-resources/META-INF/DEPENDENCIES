@@ -11,19 +11,17 @@ From: 'an unknown organization'
     License: BSD License  (http://www.antlr.org/license.html)
   - AOP alliance (http://aopalliance.sourceforge.net) aopalliance:aopalliance:jar:1.0
     License: Public Domain 
-  - colt  colt:colt:jar:1.2.0
-
   - Guava: Google Core Libraries for Java (http://code.google.com/p/guava-libraries/guava) com.google.guava:guava:jar:13.0
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - ConcurrentLinkedHashMap (http://code.google.com/p/concurrentlinkedhashmap) com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.4
+  - ConcurrentLinkedHashMap (http://code.google.com/p/concurrentlinkedhashmap) com.googlecode.concurrentlinkedhashmap:concurrentlinkedhashmap-lru:jar:1.4.1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - ParaNamer Core (http://paranamer.codehaus.org/paranamer) com.thoughtworks.paranamer:paranamer:jar:2.3
     License: BSD  (LICENSE.txt)
   - Pipes: A Lazy Data Flow Framework (http://pipes.tinkerpop.com) com.tinkerpop:pipes:jar:2.5.0
     License: BSD 3-Clause  (http://www.opensource.org/licenses/BSD-3-Clause)
-  - Blueprints-Core (http://blueprints.tinkerpop.com) com.tinkerpop.blueprints:blueprints-core:jar:2.5.0
+  - Blueprints-Core (http://blueprints.tinkerpop.com) com.tinkerpop.blueprints:blueprints-core:jar:2.6.0
     License: BSD 3-Clause  (http://www.opensource.org/licenses/BSD-3-Clause)
-  - Blueprints-Test (http://blueprints.tinkerpop.com/blueprints-test) com.tinkerpop.blueprints:blueprints-test:jar:2.5.0
+  - Blueprints-Test (http://blueprints.tinkerpop.com/blueprints-test) com.tinkerpop.blueprints:blueprints-test:jar:2.6.0
     License: BSD 3-Clause  (http://www.opensource.org/licenses/BSD-3-Clause)
   - Gremlin: A Graph Traversal Language (http://gremlin.tinkerpop.com) com.tinkerpop.gremlin:gremlin:pom:2.5.0
     License: BSD 3-Clause  (http://www.opensource.org/licenses/BSD-3-Clause)
@@ -96,15 +94,15 @@ From: 'Apache Software Foundation' (http://www.apache.org)
   - Apache Log4j (http://logging.apache.org/log4j/1.2/) log4j:log4j:bundle:1.2.16
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
 
+From: 'Carrot Search s.c.' (http://www.carrotsearch.com)
+  - HPPC Collections (http://labs.carrotsearch.com/hppc.html/hppc) com.carrotsearch:hppc:jar:0.6.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
 From: 'Codehaus' (http://www.codehaus.org/)
   - Stax2 API (http://woodstox.codehaus.org/StAX2) org.codehaus.woodstox:stax2-api:jar:3.1.1
     License: The BSD License  (http://www.opensource.org/licenses/bsd-license.php)
   - Woodstox (http://woodstox.codehaus.org) org.codehaus.woodstox:woodstox-core-asl:jar:4.1.1
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-
-From: 'Dough Lea' (http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html)
-  - Dough Lea's util.concurrent package  concurrent:concurrent:jar:1.3.4
-    License: Public domain, Sun Microsoystems  (>http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html)
 
 From: 'FasterXML' (http://fasterxml.com)
   - Jackson (http://jackson.codehaus.org) org.codehaus.jackson:jackson-core-asl:jar:1.6.9
@@ -113,13 +111,11 @@ From: 'FasterXML' (http://fasterxml.com)
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 From: 'FasterXML' (http://fasterxml.com/)
-  - Jackson-annotations (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-annotations:jar:2.2.2
+  - Jackson-annotations (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-annotations:jar:2.2.3
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)    License: GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
-  - Jackson-core (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-core:jar:2.2.2
+  - Jackson-core (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-core:jar:2.2.3
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)    License: GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
-  - jackson-databind (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-databind:jar:2.2.2
-    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)    License: GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
-  - Jackson-datatype-json.org (http://wiki.fasterxml.com/JacksonModuleProjects) com.fasterxml.jackson.datatype:jackson-datatype-json-org:jar:2.2.3
+  - jackson-databind (http://wiki.fasterxml.com/JacksonHome) com.fasterxml.jackson.core:jackson-databind:jar:2.2.3
     License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)    License: GNU Lesser General Public License, Version 2.1  (http://www.gnu.org/licenses/lgpl-2.1.html)
 
 From: 'FuseSource, Corp.' (http://fusesource.com/)
@@ -133,10 +129,6 @@ From: 'Hamcrest' (http://code.google.com/p/hamcrest)
 From: 'Hibernate.org' (http://hibernate.org)
   - JPA 2.0 API  org.hibernate.javax.persistence:hibernate-jpa-2.0-api:jar:1.0.0.Final
     License: $license.name  (license.txt)
-
-From: 'JSON' (http://json.org/)
-  - JSON (JavaScript Object Notation) (http://www.json.org/java/index.html) org.json:json:jar:20090211
-    License: provided without support or warranty  (http://www.json.org/license.html)
 
 From: 'JUnit' (http://www.junit.org)
   - JUnit (http://junit.org) junit:junit:jar:4.10
@@ -173,23 +165,19 @@ From: 'Oracle Corporation' (http://www.oracle.com/)
     License: CDDL 1.1  (https://glassfish.java.net/public/CDDL+GPL_1_1.html)    License: GPL2 w/ CPE  (https://glassfish.java.net/public/CDDL+GPL_1_1.html)
 
 From: 'Orient Technologies' (http://www.orientechnologies.com)
-  - Orient Commons (http://www.orientechnologies.com/orient-commons) com.orientechnologies:orient-commons:jar:1.7.7
+  - OrientDB Client (http://www.orientechnologies.com/orientdb-client) com.orientechnologies:orientdb-client:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Client (http://www.orientechnologies.com/orientdb-client) com.orientechnologies:orientdb-client:jar:1.7.7
+  - OrientDB Core (http://www.orientechnologies.com/orientdb-core) com.orientechnologies:orientdb-core:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Core (http://www.orientechnologies.com/orientdb-core) com.orientechnologies:orientdb-core:jar:1.7.7
+  - OrientDB Enterprise (http://www.orientechnologies.com/orientdb-enterprise) com.orientechnologies:orientdb-enterprise:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Enterprise (http://www.orientechnologies.com/orientdb-enterprise) com.orientechnologies:orientdb-enterprise:jar:1.7.7
+  - OrientDB GraphDB (http://www.orientechnologies.com/orientdb-graphdb) com.orientechnologies:orientdb-graphdb:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB GraphDB (http://www.orientechnologies.com/orientdb-graphdb) com.orientechnologies:orientdb-graphdb:jar:1.7.7
+  - OrientDB Object (http://www.orientechnologies.com/orientdb-object) com.orientechnologies:orientdb-object:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Native OS Code (http://www.orientechnologies.com/orientdb-nativeos) com.orientechnologies:orientdb-nativeos:jar:1.7.7
+  - OrientDB Server (http://www.orientechnologies.com/orientdb-server) com.orientechnologies:orientdb-server:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Object (http://www.orientechnologies.com/orientdb-object) com.orientechnologies:orientdb-object:jar:1.7.7
-    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Server (http://www.orientechnologies.com/orientdb-server) com.orientechnologies:orientdb-server:jar:1.7.7
-    License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
-  - OrientDB Tools (http://www.orientechnologies.com/orientdb-tools) com.orientechnologies:orientdb-tools:jar:1.7.7
+  - OrientDB Tools (http://www.orientechnologies.com/orientdb-tools) com.orientechnologies:orientdb-tools:jar:2.0.6
     License: Apache 2  (http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 From: 'QOS.ch' (http://www.qos.ch)

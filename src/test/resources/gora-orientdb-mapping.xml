@@ -69,5 +69,18 @@
       <field name="value" vertfield="value" type="int64"/>
       <field name="edges" vertfield="" type="array"/>
   </class>
+  
+  <class name="com.phinence.spark.storage.Exchange" keyClass="java.lang.String" vertex="Exchange">
+      <field name="Name" vertfield="nm" type="string"/>
+      <fields name="Abrev" vertField="abrev" type="string"/>
+      <field name="edges" vertfield="" type="array"/>
+  </class>
+  
+  <class name="com.phinence.spark.storage.Company" keyClass="java.lang.String" vertex="Company">
+      <field name="Name" vertfield="nm" type="string"/>
+      <field name="Code" vertfield="cd" type="string"/>
+      <field name="Ticker" vertfield="tick" type="string"/>
+      <field name="edges" vertfield="" type="array"/>
+  </class>
 	
 </gora-orm>  

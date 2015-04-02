@@ -1,19 +1,18 @@
 -------------------------------------------------------------------------------
 Test set: org.apache.gora.orientdb.store.OrientDBStore_Test
 -------------------------------------------------------------------------------
-Tests run: 35, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 89.173 sec <<< FAILURE!
-testGetWithFields(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 2.736 sec  <<< ERROR!
-java.lang.NullPointerException
-	at org.apache.gora.persistency.impl.DirtyCollectionWrapper.iterator(DirtyCollectionWrapper.java:68)
-	at org.apache.gora.persistency.impl.DirtyCollectionWrapper.clearDirty(DirtyCollectionWrapper.java:44)
-	at org.apache.gora.persistency.impl.PersistentBase.clearDirynessIfFieldIsDirtyable(PersistentBase.java:82)
-	at org.apache.gora.persistency.impl.PersistentBase.clearDirty(PersistentBase.java:73)
-	at org.apache.gora.persistency.impl.PersistentBase.clearDirynessIfFieldIsDirtyable(PersistentBase.java:82)
-	at org.apache.gora.persistency.impl.PersistentBase.clearDirty(PersistentBase.java:73)
-	at org.apache.gora.orientdb.store.OrientDBStore.get(OrientDBStore.java:266)
-	at org.apache.gora.orientdb.store.OrientDBStore.get(OrientDBStore.java:92)
-	at org.apache.gora.store.DataStoreTestUtil.testGetEmployeeWithFields(DataStoreTestUtil.java:265)
-	at org.apache.gora.store.DataStoreTestBase.testGetWithFields(DataStoreTestBase.java:282)
+Tests run: 34, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 198.327 sec <<< FAILURE!
+testDeleteByQuery(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 9.332 sec  <<< FAILURE!
+java.lang.AssertionError: expected:<0> but was:<10>
+	at org.junit.Assert.fail(Assert.java:93)
+	at org.junit.Assert.failNotEquals(Assert.java:647)
+	at org.junit.Assert.assertEquals(Assert.java:128)
+	at org.junit.Assert.assertEquals(Assert.java:472)
+	at org.junit.Assert.assertEquals(Assert.java:456)
+	at org.apache.gora.store.DataStoreTestUtil.assertNumResults(DataStoreTestUtil.java:880)
+	at org.apache.gora.store.DataStoreTestUtil.assertEmptyResults(DataStoreTestUtil.java:869)
+	at org.apache.gora.store.DataStoreTestUtil.testDeleteByQuery(DataStoreTestUtil.java:983)
+	at org.apache.gora.store.DataStoreTestBase.testDeleteByQuery(DataStoreTestBase.java:354)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

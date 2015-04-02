@@ -5,9 +5,21 @@
  */
 package org.apache.gora.orientdb.storage.test;  
 @SuppressWarnings("all")
-public class Test extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent {
+public class Test extends org.apache.gora.persistency.impl.PersistentBase implements org.apache.avro.specific.SpecificRecord, org.apache.gora.persistency.Persistent, Vertex {
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Test\",\"namespace\":\"org.apache.gora.orientdb.storage.test\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"value\",\"type\":\"int\",\"default\":0},{\"name\":\"edges\",\"type\":[{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"Edge\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"label\",\"type\":[\"string\",\"null\"],\"default\":\"null\"},{\"name\":\"target\",\"type\":[\"Test\",\"null\"],\"default\":\"null\"}]}},\"null\"],\"default\":\"null\"}]}");
 
+  /**
+   * Needed for graph insert
+   */
+  private Object key;
+  
+  public Object getKey(){
+      return key;
+  }
+  
+  public void setKey(Object key){
+      this.key = key;
+  }
   public int getFieldsCount(){
       return 2;
   }
@@ -79,7 +91,7 @@ public class Test extends org.apache.gora.persistency.impl.PersistentBase implem
   public void put(int field$, java.lang.Object value) {
     switch (field$) {
     case 0: __g__dirty = (java.nio.ByteBuffer)(value); break;
-    case 1: value = (java.lang.Integer)(value); break;
+    case 1: this.value = (java.lang.Integer)(value); break;
     case 2: edges = (java.util.List<org.apache.gora.orientdb.storage.test.Edge>)(value); break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
