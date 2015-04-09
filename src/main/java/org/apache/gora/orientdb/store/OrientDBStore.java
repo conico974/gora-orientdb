@@ -211,9 +211,8 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             for(int i=0;i<2; i++){
                 clusterNames.add(mapping.getOClassName().toLowerCase()+"_"+i);
             }
-            className.setClusterSelection(new ORoundRobinClusterSelectionStrategy());
-            LOG.info("Selection strategy"+className.getClusterSelection().getName());
             od.getMetadata().getSchema().createClass("intern"+mapping.getOClassName(), od.getMetadata().getSchema().getClass("V"));
+            od.getMetadata().getSchema().getClass("intern"+mapping.getOClassName()).addCluster("intern"+mapping.getOClassName()+"_1");
             if(useGraph){  // Not working well now
                for(String name:edgeNames){
                    String[] internal = name.split(":");
@@ -245,14 +244,24 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     public void deleteSchema() {
         
         if(schemaExists()){
-            for(ODocument doc : odb.browseClass(mapping.getOClassName())){
-                doc.delete();
-            }
-            odb.getMetadata().getSchema().dropClass(mapping.getOClassName());
+            
             for(ODocument doc : odb.browseClass("intern"+mapping.getOClassName())){
-                doc.delete();
+                odb.delete(doc.getIdentity());
+                //doc.delete();
             }
+            //odb.commit();
             odb.getMetadata().getSchema().dropClass("intern"+mapping.getOClassName()); //TO DO add a property for internalRecord
+            odb.getMetadata().getSchema().save();
+            
+            for(ODocument doc : odb.browseClass(mapping.getOClassName())){
+                odb.delete(doc.getIdentity());
+                //doc.delete();
+            }
+            //odb.commit();
+            odb.getMetadata().getSchema().dropClass(mapping.getOClassName());
+            odb.getMetadata().getSchema().save();
+            
+            
             if(useGraph){
                for(String name:edgeNames){
                    odb.getMetadata().getSchema().dropClass(name);
@@ -338,18 +347,27 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     @Override
     public long deleteByQuery(Query<K, T> query) {
         //odb.begin();
+        ODatabaseDocumentTx od = factory.acquire(nameOfHost+":"+nameOfUrl.get(clusterPosition), nameOfUser, nameOfPassword);
         query.setLocalFilterEnabled(false);
         OrientDBQuery orientQuery = new OrientDBQuery(this);
         orientQuery.setFields(null);
         OrientDBResult orientResult = new OrientDBResult(this,orientQuery);
         query.setFields(null);
         String quer = orientQuery.getSQLQuery(query, mapping);
-        orientResult.setOdb(odb);
+        orientResult.setOdb(od);
         try{
-            orientResult.initResult(quer, odb);
+            od.begin();
+            orientResult.initResult(quer, od);
             while(orientResult.next()){
-                odb.delete(orientResult.getCurrentDocument());
+                try{
+                    od.delete(orientResult.getCurrentDocument());
+                }catch(OTransactionException e){
+                    LOG.debug("Unable to delete retry",e.fillInStackTrace());
+                    od.delete(orientResult.getCurrentDocument());
+                }
             }
+            od.commit();
+            //od.getMetadata().getIndexManager().getIndex(getSchemaName()+".id").rebuild(); // TODO make a big scale test 
         } catch (Exception ex) {
             LOG.error("Error deleteByQuery at position {}"+orientResult.getOffset(),ex.fillInStackTrace());
             return -1;
@@ -407,7 +425,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         try {
             odb.commit();
         } catch (OTransactionException e) {
-            LOG.error("Error on freezing database"+e.getMessage(),e.fillInStackTrace());
+            LOG.error("Error on commiting database",e.fillInStackTrace());
             flush();
         }
     }

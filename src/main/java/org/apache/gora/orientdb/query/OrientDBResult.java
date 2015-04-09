@@ -72,7 +72,7 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
     public void initResult(String quer, final ODatabaseDocumentTx odb){
         this.queryStr= quer;
         size = ((ODocument)odb.query(new OSQLSynchQuery("select count(*) from ("+queryStr+")")).get(0)).field("count"); // Compute the number of result
-        LOG.info("The query is {} and the size is: {}",quer, size);
+        //LOG.info("The query is {} and the size is: {}",quer, size);
         asynchQuer = new OSQLAsynchQuery(queryStr,new OCommandResultListener(){
         @Override
         public boolean result(Object o) {
@@ -112,6 +112,8 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
         ODocument obj = null;
         try {
             obj = synchQueue.take();
+            if(obj == null)
+                return false;
             currentDocument = obj;
         }catch(InterruptedException e){
             LOG.error("Interrupted Exception",e.fillInStackTrace());
