@@ -31,6 +31,8 @@ import org.apache.gora.store.DataStore;
  * @author Nicolas
  * @param <K>
  * @param <T>
+ * 
+ * Only used to create a query to execute in OrientdDBResult
  */
 public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
     
@@ -44,6 +46,12 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
         super(null);
     }
     
+    /**
+     * 
+     * @param query Gora query
+     * @param mapping Mapping used for having class name
+     * @return The actual OrientDBSql query to execute
+     */
     public static String getSQLQuery(Query<?,?> query,OrientDBMapping mapping) {
         String className = mapping.getOClassName();
         String quer="(select expand(rid) from index:"+className+".id)";

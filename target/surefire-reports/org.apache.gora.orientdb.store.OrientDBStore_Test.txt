@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.apache.gora.orientdb.store.OrientDBStore_Test
 -------------------------------------------------------------------------------
-Tests run: 34, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 198.327 sec <<< FAILURE!
-testDeleteByQuery(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 9.332 sec  <<< FAILURE!
+Tests run: 34, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 330.53 sec <<< FAILURE!
+testDeleteByQuery(org.apache.gora.orientdb.store.OrientDBStore_Test)  Time elapsed: 12.59 sec  <<< FAILURE!
 java.lang.AssertionError: expected:<0> but was:<10>
 	at org.junit.Assert.fail(Assert.java:93)
 	at org.junit.Assert.failNotEquals(Assert.java:647)

@@ -35,18 +35,21 @@ import org.slf4j.LoggerFactory;
 /**
  *
  * @author Nicolas
+ * Used to Execute the OrientDB sql query
  */
 public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T> {
     
     public static final Logger LOG = LoggerFactory.getLogger(OrientDBResult.class);
         
+    //Queue used to store the actual document
     private final SynchronousQueue<ODocument> synchQueue = new SynchronousQueue();
     private String queryStr;
+    private long size;
+    
     private OSQLAsynchQuery<ODocument> asynchQuer;
     private ODatabaseDocumentTx odb;
-    private long size;
     private ODocument currentDocument;
-
+    
     public ODocument getCurrentDocument() {
         return currentDocument;
     }
@@ -69,6 +72,7 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
     public void initResult(String quer, final ODatabaseDocumentTx odb){
         this.queryStr= quer;
         size = ((ODocument)odb.query(new OSQLSynchQuery("select count(*) from ("+queryStr+")")).get(0)).field("count"); // Compute the number of result
+        LOG.info("The query is {} and the size is: {}",quer, size);
         asynchQuer = new OSQLAsynchQuery(queryStr,new OCommandResultListener(){
         @Override
         public boolean result(Object o) {
@@ -115,7 +119,7 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
         this.key = (K)obj.field("id");
         try{
             this.persistent = ((OrientDBStore<K, T>) getDataStore()).newInstanceT(obj, getQuery().getFields());
-            LOG.info("Retrieving record with key :"+this.key);
+            LOG.debug("Retrieving record with key :"+this.key);
         }catch(Exception e){
             LOG.error("Generic exception on retrieving record from Query",e.fillInStackTrace());
         }

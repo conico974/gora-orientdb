@@ -75,69 +75,71 @@ public class OrientDBMapping {
 	OClassName = clustName;
     }
     
-    	private void newVertexField(String name, VertexFieldType type) {
-		// First of all, split the field to identify the various levels
-		String[] breadcrumb = name.split("\\.");
-		// Process each intermediate field to check they are of Map type
-		StringBuilder partialFieldName = new StringBuilder();
-		for(int i=0 ; i<breadcrumb.length-1 ; i++) {
-			// Build intermediate field name
-			String f = breadcrumb[i];
-                        if(!isValidFieldName(f))
-                            throw new IllegalArgumentException(
-						"'"+f+"' is an invalid field name for a Orient vertex");
-			partialFieldName.append(f);
-			// Check field exists or not and is of valid type
-			String intermediateFieldName = partialFieldName.toString();
-			if ( vertexFields.containsKey(intermediateFieldName) ) {
-				if (vertexFields.get(intermediateFieldName) != VertexFieldType.VERTEX)
-					throw new IllegalStateException("The field '" 
-							+intermediateFieldName+"' is already registered in "
-							+"a type not compatible with the new definition of "
-							+"field '"+name+"'.");
-			} else {
-				vertexFields.put(intermediateFieldName, VertexFieldType.VERTEX);
-			}
-			partialFieldName.append(".");
-		}
-		// Check the field does not already exist, insert the complete field
-		if ( vertexFields.containsKey(name) 
-				&& (vertexFields.get(name) != type) )
-			throw new IllegalStateException("The field '"+name+"' is already "
-					+ "registered with a different type.");
-		vertexFields.put(name, type);
-	}
+    private void newVertexField(String name, VertexFieldType type) {
+        // First of all, split the field to identify the various levels
+        String[] breadcrumb = name.split("\\.");
+        // Process each intermediate field to check they are of Map type
+        StringBuilder partialFieldName = new StringBuilder();
+        for(int i=0 ; i<breadcrumb.length-1 ; i++) {
+                // Build intermediate field name
+                String f = breadcrumb[i];
+                if(!isValidFieldName(f))
+                    throw new IllegalArgumentException(
+                                        "'"+f+"' is an invalid field name for a Orient vertex");
+                partialFieldName.append(f);
+                // Check field exists or not and is of valid type
+                String intermediateFieldName = partialFieldName.toString();
+                if ( vertexFields.containsKey(intermediateFieldName) ) {
+                        if (vertexFields.get(intermediateFieldName) != VertexFieldType.VERTEX)
+                                throw new IllegalStateException("The field '" 
+                                                +intermediateFieldName+"' is already registered in "
+                                                +"a type not compatible with the new definition of "
+                                                +"field '"+name+"'.");
+                } else {
+                        vertexFields.put(intermediateFieldName, VertexFieldType.VERTEX);
+                }
+                partialFieldName.append(".");
+        }
+        // Check the field does not already exist, insert the complete field
+        if ( vertexFields.containsKey(name) 
+                        && (vertexFields.get(name) != type) )
+                throw new IllegalStateException("The field '"+name+"' is already "
+                                + "registered with a different type.");
+        vertexFields.put(name, type);
+    }
+        
+        
     public void addClassField(String docNameFromMapping,
-			String classFieldName, String docFieldName, String fieldType) {
-		// Register a new field for the Orient vertex
-		newVertexField(docFieldName, 
-				VertexFieldType.valueOf(fieldType.toUpperCase()));
-		// Register the mapping
-		if ( classToVertex.containsKey(classFieldName) ) {
-			if ( !classToVertex.get(classFieldName).equals(docFieldName) ) {
-				throw new IllegalStateException("The class field '" 
-					+ classFieldName + "' is already registered in the mapping"
-					+ " with the document field '" + classToVertex.get(classFieldName)
-					+ " which differs from the new one '" + docFieldName + "'." );
-			}
-		} else {
-			classToVertex.put(classFieldName, docFieldName);
-			vertexToClass.put(docFieldName, classFieldName);
-		}
-	}
+        String classFieldName, String docFieldName, String fieldType) {
+        // Register a new field for the Orient vertex
+        newVertexField(docFieldName, 
+                        VertexFieldType.valueOf(fieldType.toUpperCase()));
+        // Register the mapping
+        if ( classToVertex.containsKey(classFieldName) ) {
+                if ( !classToVertex.get(classFieldName).equals(docFieldName) ) {
+                        throw new IllegalStateException("The class field '" 
+                                + classFieldName + "' is already registered in the mapping"
+                                + " with the document field '" + classToVertex.get(classFieldName)
+                                + " which differs from the new one '" + docFieldName + "'." );
+                }
+        } else {
+                classToVertex.put(classFieldName, docFieldName);
+                vertexToClass.put(docFieldName, classFieldName);
+        }
+    }
     
     public String getVertexField(String field) {
-		return classToVertex.get(field);
-	}
+        return classToVertex.get(field);
+    }
 	
-	/**
-	 * Package private method to retrieve the type of a document field.
-     * @param field
-     * @return 
-	 */
-	protected VertexFieldType getVertexFieldType(String field) {
-		return vertexFields.get(field);
-	}
+    /**
+     * Package private method to retrieve the type of a document field.
+ * @param field
+ * @return 
+     */
+    protected VertexFieldType getVertexFieldType(String field) {
+        return vertexFields.get(field);
+    }
         
     private boolean isValidFieldName(String f) {
         return validOrientVertexField.matcher(f).matches();

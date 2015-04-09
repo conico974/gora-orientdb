@@ -22,6 +22,8 @@ import org.apache.gora.query.impl.PartitionQueryImpl;
 /**
  *
  * @author Nicolas
+ * 
+ * Used to create a query over a particular cluster instead of over the whole class
  */
 public class OrientDBPartitionQuery extends PartitionQueryImpl{
     
