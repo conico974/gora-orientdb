@@ -132,12 +132,12 @@
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-core</artifactId>
-            <version>2.0-rc2</version>
+            <version>2.0.6</version>
         </dependency>
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-graphdb</artifactId>
-            <version>2.0-rc2</version>
+            <version>2.0.6</version>
         </dependency>
         <dependency>
             <groupId>jdom</groupId>
@@ -174,12 +174,12 @@
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-client</artifactId>
-            <version>2.0-rc2</version>
+            <version>2.0.6</version>
         </dependency>
         <dependency>
             <groupId>com.orientechnologies</groupId>
             <artifactId>orientdb-enterprise</artifactId>
-            <version>2.0-rc2</version>
+            <version>2.0.6</version>
         </dependency>
     </dependencies>
 

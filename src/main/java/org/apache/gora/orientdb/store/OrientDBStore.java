@@ -385,7 +385,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         orientResult.setOdb(odb);
         String quer = orientQuery.getSQLQuery(query, mapping);
         try{
-            LOG.debug("The query is : "+quer);
+            LOG.info("The query is : "+quer);  //TODO replace with debug
             orientResult.initResult(quer, odb);
             
             LOG.debug("OrientResult size : "+orientResult.getSize());
@@ -407,7 +407,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     @Override
     public List<PartitionQuery<K, T>> getPartitions(Query<K, T> query) throws IOException {
         //Sharding
-        int[] clusterIds = className.getClusterIds();
+        int[] clusterIds = odb.getMetadata().getSchema().getClass(mapping.getOClassName()).getClusterIds();
         List<PartitionQuery<K, T>> partitions = new ArrayList<PartitionQuery<K, T>>();
         for(int id: clusterIds){
             OrientDBPartitionQuery partitionQuery = new OrientDBPartitionQuery(
@@ -416,6 +416,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             String clusterName = odb.getClusterNameById(id);
             partitionQuery.setClusterName(clusterName);
             partitions.add(partitionQuery);
+            LOG.info("Name of cluster : "+partitionQuery.getClusterName());  //TODO replace with debug
         }
         return partitions;
     }

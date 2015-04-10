@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1421327152163
+Bnd-LastModified: 1428684951672
 Build-Jdk: 1.7.0_17
 Built-By: Nicolas
 Bundle-Description: The Apache Gora open source framework provides an in
@@ -19,7 +19,8 @@ Export-Package: org.apache.gora.orientdb.storage.test;uses:="org.apache.
  avro.generic,org.apache.avro,org.apache.avro.specific,org.apache.avro.d
  ata,org.apache.gora.persistency,org.apache.gora.persistency.impl";versi
  on="0.5.0.SNAPSHOT",org.apache.gora.orientdb.query;uses:="org.apache.go
- ra.query.impl,org.apache.gora.query,org.apache.gora.store,org.apache.go
+ ra.store,org.apache.hadoop.conf,org.apache.gora.store.impl,org.apache.g
+ ora.util,org.apache.gora.query.impl,org.apache.gora.query,org.apache.go
  ra.orientdb.store,com.orientechnologies.orient.core.command,com.oriente
  chnologies.orient.core.record.impl,org.slf4j,com.orientechnologies.orie
  nt.core.db.document,com.orientechnologies.orient.core.sql.query,com.ori
@@ -37,9 +38,9 @@ Export-Package: org.apache.gora.orientdb.storage.test;uses:="org.apache.
  ntechnologies.orient.core.db.document,org.apache.gora.persistency,com.o
  rientechnologies.orient.core.metadata,com.orientechnologies.orient.core
  .id,com.orientechnologies.orient.enterprise.channel.binary,com.orientec
- hnologies.orient.core.record.impl,com.orientechnologies.orient.core.db.
- record,org.apache.gora.orientdb.storage.test,org.apache.gora.orientdb.q
- uery,org.apache.gora.util,com.tinkerpop.blueprints.impls.orient,com.ori
+ hnologies.orient.core.record.impl,org.apache.gora.orientdb.storage.test
+ ,com.orientechnologies.orient.core.db.record,org.apache.gora.util,org.a
+ pache.gora.orientdb.query,com.tinkerpop.blueprints.impls.orient,com.ori
  entechnologies.orient.core.type,org.apache.gora.query";version="0.5.0.S
  NAPSHOT"
 Import-Package: com.orientechnologies.orient.client.remote;version="[2.0
