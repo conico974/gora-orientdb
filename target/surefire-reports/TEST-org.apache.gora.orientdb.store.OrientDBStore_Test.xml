@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="70.658" errors="32" skipped="2" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
+<testsuite failures="0" time="71.384" errors="32" skipped="2" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\bin"/>
@@ -61,13 +61,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.593" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGraphInsert">
+  <testcase time="0.719" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGraphInsert">
     <skipped/>
   </testcase>
-  <testcase time="0.609" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testComplexGraphInsert">
+  <testcase time="0.734" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testComplexGraphInsert">
     <skipped/>
   </testcase>
-  <testcase time="4.582" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults">
+  <testcase time="5.087" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -119,12 +119,12 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>16 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-1329 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-1985 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-avr. 10, 2015 6:54:40 PM com.orientechnologies.common.log.OLogManager log
-INFO: OrientDB auto-config DISKCACHE=5 568MB (heap=455MB os=8 071MB disk=27 484MB)
-3567 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>31 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+1375 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+2196 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+avr. 10, 2015 7:32:28 PM com.orientechnologies.common.log.OLogManager log
+INFO: OrientDB auto-config DISKCACHE=5 568MB (heap=455MB os=8 071MB disk=27 481MB)
+4071 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -161,10 +161,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-4583 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+5103 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields">
+  <testcase time="2.157" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -216,10 +216,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>4598 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-4598 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-4661 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-5676 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>5118 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+5118 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+5212 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+6228 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -256,10 +256,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-6708 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+7275 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance">
+  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -311,10 +311,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>6708 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-6708 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-6770 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-7817 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>7275 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+7275 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+7353 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+8384 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -351,10 +351,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-8833 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+9400 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.135" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema">
+  <testcase time="2.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -406,10 +406,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>8833 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-8833 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-8911 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-9936 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>9400 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+9400 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+9478 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+10494 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -446,10 +446,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-10968 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+11509 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange">
+  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -501,10 +501,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>10968 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-10968 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-11030 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-12046 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>11509 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+11509 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+11572 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+12603 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -541,10 +541,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-13077 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+13634 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery">
+  <testcase time="2.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -596,10 +596,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>13077 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-13077 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-13140 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-14187 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>13634 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+13634 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+13697 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+14729 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -636,10 +636,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-15202 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+15744 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested">
+  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -691,10 +691,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>15202 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-15202 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-15265 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-16281 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>15744 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+15744 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+15807 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+16823 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -731,10 +731,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-17327 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+17838 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.122" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey">
+  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -786,10 +786,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>17327 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-17327 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-17390 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-18433 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>17838 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+17838 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+17901 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+18932 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -826,10 +826,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-19449 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+19963 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive">
+  <testcase time="2.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -881,10 +881,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>19449 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-19449 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-19511 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-20543 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>19963 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+19963 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+20042 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+21057 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -921,7 +921,102 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-21558 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+22073 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>22073 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+22073 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+22120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+23135 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+24151 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
   <testcase time="2.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetPartitions">
@@ -976,10 +1071,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>21558 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-21558 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-21605 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-22621 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>24151 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+24151 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+24198 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+25214 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1016,7 +1111,292 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-23637 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+26230 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>26230 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+26230 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+26277 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+27293 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+28308 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="2.098" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>28308 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+28308 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+28355 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+29387 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+30406 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="2.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>30406 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+30406 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+30469 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+31484 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+32516 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
   <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryStartKey">
@@ -1071,10 +1451,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>23637 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-23637 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-23683 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-24699 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>32516 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+32516 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+32547 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+33562 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1111,10 +1491,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-25715 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+34594 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema">
+  <testcase time="2.119" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -1166,10 +1546,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>25715 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-25715 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-25762 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-26777 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>34594 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+34594 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+34641 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+35682 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1206,390 +1586,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-27809 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+36713 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists">
-    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
-	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
-	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
-	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
-	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
-	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</error>
-    <system-err>27809 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-27809 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-27856 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-28871 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
-com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-29903 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
-</system-err>
-  </testcase>
-  <testcase time="2.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields">
-    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
-	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
-	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
-	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
-	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
-	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</error>
-    <system-err>29903 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-29903 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-29950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-30997 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
-com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-32012 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
-</system-err>
-  </testcase>
-  <testcase time="2.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting">
-    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
-	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
-	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
-	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
-	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
-	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</error>
-    <system-err>32012 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-32012 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-32044 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-33059 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
-com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-34091 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
-</system-err>
-  </testcase>
-  <testcase time="2.102" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage">
-    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
-	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
-	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
-	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
-	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
-	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</error>
-    <system-err>34091 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-34091 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-34137 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-35162 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
-com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-36193 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
-</system-err>
-  </testcase>
-  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields">
+  <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -1640,10 +1640,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>36193 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-36193 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-36224 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-37256 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>36713 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+36713 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+36744 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+37776 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1679,10 +1679,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-38287 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+38791 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.082" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField">
+  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -1733,10 +1733,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>38287 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-38287 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-38318 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-39341 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>38791 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+38791 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+38823 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+39854 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1772,10 +1772,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-40365 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+40885 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.09" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema">
+  <testcase time="2.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -1826,10 +1826,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>40369 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-40372 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-40418 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-41425 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>40885 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+40885 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+40916 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+41995 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1865,7 +1865,100 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-42456 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+43010 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="2.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>43010 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+43010 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+43041 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+44073 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
+	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
+	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+45089 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
   <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKey">
@@ -1919,10 +2012,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>42460 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-42463 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-42502 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-43514 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>45089 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+45089 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+45120 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+46135 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -1958,10 +2051,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-44534 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+47167 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.058" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema">
+  <testcase time="2.085" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2012,10 +2105,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>44538 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-44540 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-44568 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-45582 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>47167 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+47167 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+47198 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+48221 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2051,10 +2144,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-46592 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+49252 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.065" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested">
+  <testcase time="2.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2105,10 +2198,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>46595 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-46598 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-46626 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-47631 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>49252 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+49252 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+49284 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+50299 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2144,10 +2237,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-48658 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+51331 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.148" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields">
+  <testcase time="2.062" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2198,10 +2291,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>48661 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-48742 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-48779 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-49775 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>51331 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+51331 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+51362 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+52378 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2237,10 +2330,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-50809 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+53393 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive">
+  <testcase time="2.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2291,10 +2384,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>50809 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-50809 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-50841 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-51856 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>53393 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+53393 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+53424 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+54440 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2330,10 +2423,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-52872 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+55456 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes">
+  <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2384,10 +2477,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>52872 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-52872 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-52888 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-53903 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>55456 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+55456 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+55487 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+56503 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2423,10 +2516,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-54935 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+57534 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.093" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet">
+  <testcase time="2.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2477,10 +2570,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>54935 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-54935 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-54950 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-55982 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>57534 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+57534 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+57565 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+58581 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2516,10 +2609,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-57028 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+59597 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap">
+  <testcase time="2.062" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2570,10 +2663,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>57028 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-57028 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-57060 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-58075 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>59597 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+59597 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+59612 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+60644 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2609,10 +2702,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-59107 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+61659 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray">
+  <testcase time="2.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2663,10 +2756,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>59107 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-59107 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-59138 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-60154 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>61659 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+61675 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+61706 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+62753 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2702,10 +2795,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-61185 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+63769 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery">
+  <testcase time="2.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2756,10 +2849,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>61185 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-61201 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-61232 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-62263 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>63769 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+63769 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+63785 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+64816 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2795,10 +2888,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-63279 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+65832 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.047" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate">
+  <testcase time="2.062" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2849,10 +2942,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>63279 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-63279 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-63294 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-64310 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>65832 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+65832 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+65847 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+66863 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2888,10 +2981,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-65326 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+67894 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="2.085" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete">
+  <testcase time="2.068" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields">
     <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
 	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
@@ -2942,10 +3035,10 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>65326 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-65326 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-65341 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-66379 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
+    <system-err>67894 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+67894 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+67910 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+68941 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
 com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
 	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
 	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
@@ -2981,100 +3074,7 @@ com.orientechnologies.orient.core.exception.OStorageException: Cannot create a c
 	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-67411 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
-</system-err>
-  </testcase>
-  <testcase time="2.062" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut">
-    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2424]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
-	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
-	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
-	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
-	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
-	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
-	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
-	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
-	at org.apache.gora.orientdb.store.OrientDBStore.createSchema(OrientDBStore.java:205)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:129)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-</error>
-    <system-err>67411 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-67411 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-67426 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-68458 [main] ERROR org.apache.gora.orientdb.store.OrientDBStore - Generic error while initializingCannot create a connection to remote server address(es): [127.0.0.1:2424]
-com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2424]
-	at org.apache.gora.orientdb.store.OrientDBStore.initialize(OrientDBStore.java:187)
-	at org.apache.gora.orientdb.store.OrientDBStore_Test.createEmployeeDataStore(OrientDBStore_Test.java:128)
-	at org.apache.gora.store.DataStoreTestBase.setUp(DataStoreTestBase.java:96)
-	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
-	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
-	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:27)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
-	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
-	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
-	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:601)
-	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
-	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
-	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
-	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
-	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
-69473 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+69962 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
 </testsuite>

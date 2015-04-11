@@ -318,13 +318,16 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     @Override
     public void put(K key, T obj) {
         if(obj.isDirty()) {
-            try{
-                putUpdate(key,obj);
+            // Actually we use this as in OrientDB Distributed Database always use local for clustering
+            // We should add an option to disable this if you wanna use a load balancer instead
+            ODatabaseDocumentTx od = getCurrentClusterDatabase();
+            try{                
+                putUpdate(key,obj,od);
                 //odb.commit();
             }catch(Exception e){  //Temporary
                 LOG.error("Error on commiting update",e.fillInStackTrace());
             }finally{
-                
+                od.close();
                 
             }
             LOG.debug("The object  with key : "+key.toString()+"  is added to the db");
@@ -766,12 +769,8 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
      * @param key
      * @param obj 
      */
-    private void putUpdate(K key, T obj) {
+    private void putUpdate(K key, T obj, ODatabaseDocumentTx od) {
         ODocument v = null;
-        
-        // Actually we use this as in OrientDB Distributed Database always use local for clustering
-        // We should add an option to disable this if you wanna use a load balancer instead
-        ODatabaseDocumentTx od = getCurrentClusterDatabase();
 
         od.begin();
         
@@ -844,12 +843,6 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             }catch(Exception e) {
                 od.rollback();
                 LOG.error("Generic Exception at putUpdate for doc:"+v.getIdentity().toString(),e.fillInStackTrace());
-            }finally {
-                try{
-                    od.close();
-                }catch(Exception e){
-                    LOG.error("ODatabaseException while closing database",e.fillInStackTrace());
-                }
             }
     }
     }

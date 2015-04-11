@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1428684951672
+Bnd-LastModified: 1428687219926
 Build-Jdk: 1.7.0_17
 Built-By: Nicolas
 Bundle-Description: The Apache Gora open source framework provides an in
