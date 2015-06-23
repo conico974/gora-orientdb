@@ -9,7 +9,8 @@ public class Edge extends org.apache.gora.persistency.impl.PersistentBase implem
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"Edge\",\"namespace\":\"org.apache.gora.orientdb.storage.test\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"label\",\"type\":[\"string\",\"null\"],\"default\":\"null\"},{\"name\":\"target\",\"type\":[{\"type\":\"record\",\"name\":\"Test\",\"fields\":[{\"name\":\"__g__dirty\",\"type\":\"bytes\",\"doc\":\"Bytes used to represent weather or not a field is dirty.\",\"default\":\"AA==\"},{\"name\":\"value\",\"type\":\"int\",\"default\":0},{\"name\":\"edges\",\"type\":[{\"type\":\"array\",\"items\":\"Edge\"},\"null\"],\"default\":\"null\"}]},\"null\"],\"default\":\"null\"}]}");
 
   public int getFieldsCount(){
-      return 2;
+      return 2; // TODO 
+      
   }
   /**
    * Key needed for graph insert

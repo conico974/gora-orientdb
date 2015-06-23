@@ -71,8 +71,10 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
     
     public void initResult(String quer, final ODatabaseDocumentTx odb){
         this.queryStr= quer;
-        size = ((ODocument)odb.query(new OSQLSynchQuery("select count(*) from ("+queryStr+")")).get(0)).field("count"); // Compute the number of result
+        //Maybe replace this by a OProgressListener
+        size = ((ODocument)odb.query(new OSQLSynchQuery("select count(*) from ("+queryStr+")")).get(0)).field("count"); // Compute the number of result 
         //LOG.info("The query is {} and the size is: {}",quer, size);
+        
         asynchQuer = new OSQLAsynchQuery(queryStr,new OCommandResultListener(){
         @Override
         public boolean result(Object o) {
@@ -129,7 +131,7 @@ public class OrientDBResult<K, T extends PersistentBase> extends ResultBase<K, T
     }
 
     @Override
-    public float getProgress() throws IOException, InterruptedException {
+    public float getProgress() throws IOException, InterruptedException { //TODO replace with OProgressListener
         float result = (float)offset/(float)size;
         return result;
     }

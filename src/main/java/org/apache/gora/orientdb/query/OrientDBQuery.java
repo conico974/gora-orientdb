@@ -34,7 +34,7 @@ import org.apache.gora.store.DataStore;
  * 
  * Only used to create a query to execute in OrientdDBResult
  */
-public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
+public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> { // TODO filter not implemented yet and TEST limit
     
 
     public OrientDBQuery(DataStore<K, T> dataStore) {
@@ -52,7 +52,7 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
      * @param mapping Mapping used for having class name
      * @return The actual OrientDBSql query to execute
      */
-    public static String getSQLQuery(Query<?,?> query,OrientDBMapping mapping) {
+    public static String getSQLQuery(Query<?,?> query,OrientDBMapping mapping) { // TODO add FIlter and limit to the query
         String className = mapping.getOClassName();
         String quer="(select expand(rid) from index:"+className+".id)";
         if ((query.getStartKey() != null) && (query.getEndKey() != null)
@@ -67,9 +67,9 @@ public class OrientDBQuery<K,T extends PersistentBase> extends QueryBase<K,T> {
                 quer = "(select expand(rid) from index:"+className+".id where key <=\""+query.getEndKey()+"\")";
         }
         if(query instanceof OrientDBPartitionQuery){
-            return project(query.getFields(),mapping)+getPartitionQuery(quer,(OrientDBPartitionQuery)query);
+            return project(query.getFields(),mapping)+getPartitionQuery(quer,(OrientDBPartitionQuery)query)+" limit "+query.getLimit();
         }else
-            return project(query.getFields(),mapping)+quer;
+            return project(query.getFields(),mapping)+quer+" limit "+query.getLimit();
     }
     
     private static String project(String[] fields, OrientDBMapping mapping){
