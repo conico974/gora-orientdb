@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="0" time="462.725" errors="1" skipped="2" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
+<testsuite failures="0" time="39.217" errors="3" skipped="0" tests="34" name="org.apache.gora.orientdb.store.OrientDBStore_Test">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_17\jre\bin"/>
@@ -61,45 +61,10 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase time="0.487" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testComplexGraphInsert">
-    <skipped/>
-  </testcase>
-  <testcase time="0.493" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGraphInsert">
-    <skipped/>
-  </testcase>
-  <testcase time="14.864" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults"/>
-  <testcase time="11.415" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery"/>
-  <testcase time="11.31" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField"/>
-  <testcase time="11.505" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields"/>
-  <testcase time="12.034" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive"/>
-  <testcase time="11.78" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive"/>
-  <testcase time="11.712" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested"/>
-  <testcase time="14.241" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryStartKey"/>
-  <testcase time="15.437" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetPartitions"/>
-  <testcase time="22.674" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema"/>
-  <testcase time="11.969" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema"/>
-  <testcase time="15.454" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists"/>
-  <testcase time="27.591" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema"/>
-  <testcase time="15.485" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey"/>
-  <testcase time="12.105" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance"/>
-  <testcase time="12.977" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKey"/>
-  <testcase time="14.999" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields"/>
-  <testcase time="16.545" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields"/>
-  <testcase time="11.783" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema"/>
-  <testcase time="14.353" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage"/>
-  <testcase time="14.106" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested"/>
-  <testcase time="19.456" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange"/>
-  <testcase time="13.263" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting"/>
-  <testcase time="14.734" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields"/>
-  <testcase time="14.285" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes"/>
-  <testcase time="13.133" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet"/>
-  <testcase time="12.692" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut"/>
-  <testcase time="14.346" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete"/>
-  <testcase time="14.896" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate">
-    <error type="java.lang.NullPointerException">java.lang.NullPointerException
-	at org.apache.gora.store.DataStoreTestUtil.toByteArray(DataStoreTestUtil.java:1175)
-	at org.apache.gora.store.DataStoreTestUtil.testUpdateWebPagePutToArray(DataStoreTestUtil.java:519)
-	at org.apache.gora.store.DataStoreTestBase.testUpdate(DataStoreTestBase.java:213)
+  <testcase time="2.672" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGraphInsert">
+    <error message="Index 0 out of bounds." type="java.lang.IndexOutOfBoundsException">java.lang.IndexOutOfBoundsException: Index 0 out of bounds.
+	at org.apache.avro.generic.GenericData$Array.get(GenericData.java:173)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.testGraphInsert(OrientDBStore_Test.java:358)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -134,24 +99,206 @@
 	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
 </error>
-    <system-err>406279 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
-406279 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-406357 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
-406372 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
-406372 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
-406372 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
-406419 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : WebPage
-406435 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
-406435 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
-409656 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
-419980 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
-419980 [main] INFO org.apache.gora.store.DataStoreTestBase - test method: testUpdate
-419980 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
-420241 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
-421156 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+    <system-err>16 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+406 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+625 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+juil. 22, 2015 7:28:55 PM com.orientechnologies.common.log.OLogManager log
+INFO: OrientDB auto-config DISKCACHE=5 568MB (heap=455MB os=8 071MB disk=19 065MB)
+1141 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+1141 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+1141 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+1156 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : WebPage
+1172 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+1172 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+1844 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+2391 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+2406 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+2422 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : test
+2438 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/searchDB]
+2438 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class test and interntest has been created
+2531 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+2547 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+2594 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+2594 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+2594 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - key of this vertex1
+2594 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - key of in vertex#21:0
+2625 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Edge don&apos;t exist in graph
+2641 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - No corresponding VertexField for :__g__dirty
+2641 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - key of this vertex1
+2641 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - key of in vertex#21:0
+2672 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Class name of edge:org.apache.gora.orientdb.storage.test.Edge
+2672 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Inside OutEdge of vertex:#21:0
+2672 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Class name of edge:org.apache.gora.orientdb.storage.test.Edge
+2672 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Inside OutEdge of vertex:#21:0
+2672 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - T1Read : 1
+2672 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
 </system-err>
   </testcase>
-  <testcase time="13.905" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray"/>
-  <testcase time="12.648" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap"/>
-  <testcase time="14.048" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery"/>
+  <testcase time="1.203" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testComplexGraphInsert">
+    <error message="org.apache.avro.AvroRuntimeException: Field Name type:UNION pos:1 not set and has no default value" type="org.apache.avro.AvroRuntimeException">org.apache.avro.AvroRuntimeException: org.apache.avro.AvroRuntimeException: Field Name type:UNION pos:1 not set and has no default value
+	at com.phinence.spark.storage.Exchange$Builder.build(Exchange.java:342)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.createExchange(OrientDBStore_Test.java:420)
+	at org.apache.gora.orientdb.store.OrientDBStore_Test.testComplexGraphInsert(OrientDBStore_Test.java:371)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+Caused by: org.apache.avro.AvroRuntimeException: Field Name type:UNION pos:1 not set and has no default value
+	at org.apache.avro.generic.GenericData.getDefaultValue(GenericData.java:829)
+	at org.apache.avro.data.RecordBuilderBase.defaultValue(RecordBuilderBase.java:135)
+	at com.phinence.spark.storage.Exchange$Builder.build(Exchange.java:337)
+	... 35 more
+</error>
+    <system-err>2688 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+2688 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+2719 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+2719 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+2719 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+2719 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+2750 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : WebPage
+2750 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+2766 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+3266 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+3781 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+3797 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+3813 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Exchange
+3828 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/searchDB]
+3828 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Exchange and internExchange has been created
+3844 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+3860 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Company
+3875 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/searchDB]
+3875 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Company and internCompany has been created
+3891 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="1.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageQueryEmptyResults"/>
+  <testcase time="1.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKeyDefaultFields"/>
+  <testcase time="1.094" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQuery"/>
+  <testcase time="1.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDelete"/>
+  <testcase time="1.079" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testUpdate"/>
+  <testcase time="0.968" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet"/>
+  <testcase time="1.11" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutBytes"/>
+  <testcase time="1.031" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutArray"/>
+  <testcase time="1.113" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutMap"/>
+  <testcase time="1.031" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPut"/>
+  <testcase time="2.438" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWithFields">
+    <error message="Cannot create a connection to remote server address(es): [127.0.0.1:2425]" type="com.orientechnologies.orient.core.exception.OStorageException">com.orientechnologies.orient.core.exception.OStorageException: Cannot create a connection to remote server address(es): [127.0.0.1:2425]
+	at com.orientechnologies.orient.client.remote.OStorageRemote.openRemoteDatabase(OStorageRemote.java:1675)
+	at com.orientechnologies.orient.client.remote.OStorageRemote.open(OStorageRemote.java:212)
+	at com.orientechnologies.orient.client.remote.OStorageRemoteThread.open(OStorageRemoteThread.java:87)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx.open(ODatabaseDocumentTx.java:244)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentTxPooled.&lt;init&gt;(ODatabaseDocumentTxPooled.java:49)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:53)
+	at com.orientechnologies.orient.core.db.document.ODatabaseDocumentPool.createResource(ODatabaseDocumentPool.java:28)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:81)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase$1.createNewResource(ODatabasePoolBase.java:70)
+	at com.orientechnologies.common.concur.resource.OResourcePool.getResource(OResourcePool.java:91)
+	at com.orientechnologies.common.concur.resource.OReentrantResourcePool.getResource(OReentrantResourcePool.java:67)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:158)
+	at com.orientechnologies.orient.core.db.ODatabasePoolAbstract.acquire(ODatabasePoolAbstract.java:138)
+	at com.orientechnologies.orient.core.db.ODatabasePoolBase.acquire(ODatabasePoolBase.java:128)
+	at org.apache.gora.orientdb.store.OrientDBStore.getCurrentClusterDatabase(OrientDBStore.java:601)
+	at org.apache.gora.orientdb.store.OrientDBStore.put(OrientDBStore.java:314)
+	at org.apache.gora.orientdb.store.OrientDBStore.put(OrientDBStore.java:69)
+	at org.apache.gora.store.DataStoreTestUtil.testGetEmployeeWithFields(DataStoreTestUtil.java:258)
+	at org.apache.gora.store.DataStoreTestBase.testGetWithFields(DataStoreTestBase.java:282)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:45)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:42)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:20)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:263)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:68)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:47)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:231)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:60)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:229)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:50)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:222)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:28)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:30)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:300)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:134)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:113)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:103)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:74)
+</error>
+    <system-err>14629 [main] INFO org.apache.gora.store.DataStoreTestBase - setting up test
+14629 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+14629 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : Employee
+14645 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+14645 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+14645 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Unable to load the mapping from resource &apos;C:\Users\Nicolas\gora\gora-orientdb\src\test\resources\gora-orientdb-mapping.xml&apos; as it does not appear to exist! Trying local file.
+14645 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Vertex name : WebPage
+14660 [main] INFO org.apache.gora.orientdb.store.OrientDBStore - Initialized Orient Store for host remote and url [localhost:2424/testDB, localhost:2425/testDB]
+14660 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+15176 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class Employee and internEmployee has been created
+16035 [main] WARN org.apache.gora.orientdb.store.OrientDBStore - Class WebPage and internWebPage has been created
+16035 [main] INFO org.apache.gora.store.DataStoreTestBase - test method: testGetWithFields
+17067 [main] INFO org.apache.gora.store.DataStoreTestBase - tearing down test
+</system-err>
+  </testcase>
+  <testcase time="1.046" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testPutNested"/>
+  <testcase time="1.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPage"/>
+  <testcase time="1.203" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryKeyRange"/>
+  <testcase time="1.235" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetDoubleRecursive"/>
+  <testcase time="1.125" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryEndKey"/>
+  <testcase time="1" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGet3UnionField"/>
+  <testcase time="1.109" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testAutoCreateSchema"/>
+  <testcase time="1.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNonExisting"/>
+  <testcase time="1.015" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryStartKey"/>
+  <testcase time="1.063" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteSchema"/>
+  <testcase time="0.937" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetPartitions"/>
+  <testcase time="0.969" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testNewInstance"/>
+  <testcase time="1.047" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testQueryWebPageSingleKey"/>
+  <testcase time="1.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQuery"/>
+  <testcase time="1.072" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testTruncateSchema"/>
+  <testcase time="1.078" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testSchemaExists"/>
+  <testcase time="0.985" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetNested"/>
+  <testcase time="1.062" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetWebPageDefaultFields"/>
+  <testcase time="1.001" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testGetRecursive"/>
+  <testcase time="1" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testDeleteByQueryFields"/>
+  <testcase time="1.015" classname="org.apache.gora.orientdb.store.OrientDBStore_Test" name="testCreateSchema"/>
 </testsuite>

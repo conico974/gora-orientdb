@@ -17,11 +17,13 @@
 package org.apache.gora.orientdb.serialization;
 
 import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
+import com.orientechnologies.orient.core.db.record.OIdentifiable;
 import com.orientechnologies.orient.core.exception.OConcurrentModificationException;
 import com.orientechnologies.orient.core.id.ORecordId;
 import com.orientechnologies.orient.core.index.OCompositeKey;
 import com.orientechnologies.orient.core.index.OIndex;
 import com.orientechnologies.orient.core.record.impl.ODocument;
+import com.orientechnologies.orient.core.record.impl.ORecordBytes;
 import com.tinkerpop.blueprints.Vertex;
 import com.tinkerpop.blueprints.impls.orient.OrientEdge;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
@@ -130,8 +132,10 @@ public class Serialization {
                     break;
                 case BYTES:
                     // Beware of ByteBuffer not being safely serialized
-                    LOG.debug("Insert Bytes"+field.name());  //Temporary
-                    v.field(key, ((ByteBuffer)value).array());
+                    LOG.debug("Insert Bytes"+field.name()+" value in string"+value.toString());  //Temporary
+                    ORecordBytes record = new ORecordBytes(((ByteBuffer)value).array());
+                    odb.save(record);
+                    v.field(key, record);
                     //v.setProperty(key, ((ByteBuffer) value).array());
                     break;
 		case STRING:
@@ -262,7 +266,9 @@ public class Serialization {
                     map.put(vKey,e.getValue().toString());
                     break;
             case BYTES:
-                map.put(vKey,((ByteBuffer) e.getValue()).array());
+                ORecordBytes recordBytes = new ORecordBytes(((ByteBuffer)e.getValue()).array());
+                odb.save(recordBytes);
+                map.put(vKey,recordBytes);
                 break;
             case LONG:
                 map.put(vKey, (Long)e.getValue());
@@ -341,7 +347,9 @@ public class Serialization {
                     break;
                     // FIXME Record 
             case BYTES:
-                list.add(((ByteBuffer)item).array());
+                ORecordBytes record = new ORecordBytes(((ByteBuffer)item).array());
+                odb.save(record);
+                list.add(record);
                 break;
             case RECORD:
                 graphRec = true;
@@ -354,13 +362,13 @@ public class Serialization {
                 if(checkKey(item)){
                     OIndex odict = od.getMetadata().getIndexManager().getIndex(persistDoc.getSchema().getName()+".id");
                     Object docKey = getKey(((Persistent)item).get(2));
-                    LOG.debug("key of this vertex"+docKey);
+                    LOG.info("key of this vertex"+docKey);
                     if(odict.get(docKey)==null)
                         throw new IllegalStateException("You must provide a valid key to create the Edge");
                     //Vertex outVert = graph.getVertex(v.getIdentity());
                     ODocument outVert = v;
-                    LOG.debug("key of in vertex"+v.getIdentity());
-                    ODocument inVert = (ODocument) odict.get(docKey); // Possible incorrect cast
+                    LOG.info("key of in vertex"+v.getIdentity());
+                    ODocument inVert = od.getRecord((OIdentifiable)odict.get(docKey)); // Possible incorrect cast
                     //Vertex inVert = graph.getVertex(odict.get(docKey));
                     OIndex index = od.getMetadata().getIndexManager().getIndex("uni_"+edgeName);
                     OCompositeKey compKey = new OCompositeKey();
@@ -370,12 +378,18 @@ public class Serialization {
                     ODocument edge = null;
                     if(!index.contains(compKey)){
                         //e = graph.addEdge(null, outVert, inVert, edgeName);
-                        edge = od.newInstance(edgeName);
-                        edge.field("out",outVert);
-                        edge.field("in", inVert);
+                        OrientGraph graph = new OrientGraph(od);
+                        LOG.info("Edge don't exist in graph");
+                        OrientVertex outVertex = graph.getVertex(outVert.getIdentity());
+                        OrientVertex inVertex = graph.getVertex(inVert.getIdentity());
+                        edge = outVertex.addEdge(null, inVertex, edgeName).getRecord();
+//                        edge = od.newInstance(edgeName);
+//                        edge.field("out",outVert);
+//                        edge.field("in", inVert);
+                        //index.put(compKey, edge);
                     }
                     else{
-                        edge = (ODocument) index.get(compKey);
+                        edge = od.getRecord((OIdentifiable)index.get(compKey));
                         //e = graph.getEdge(index.get(compKey));
                     }
 
@@ -411,13 +425,15 @@ public class Serialization {
                     List<ODocument> vertKey = new ArrayList(); // TODO replace list by a more efficient one
                     vertKey.add(v);
                     vertKey.add(outDoc);
-                    OrientEdge e = null;
+//                    OrientEdge e = null;
                     ODocument edge = null;
-                    if((e = (OrientEdge)index.get(vertKey))==null){
+                    if((edge = (ODocument)index.get(vertKey))==null){
                         //e = (OrientEdge)(inVert.addEdge(edgeName, outVert));
+                        LOG.info("Document don't exist in graph");
                         edge = od.newInstance(edgeName);
                         edge.field("in", v); //Possible null pointer
                         edge.field("out", outDoc);
+                        edge.save();
                     }
                     int size = ((Persistent)item).getUnmanagedFields().size();
                     if(size>1){
@@ -428,7 +444,7 @@ public class Serialization {
                             LOG.debug("Member name :  "+innerFieldName);
                             if(!Utils.isValidFieldName(innerFieldName))
                                 continue;
-                            putAsOrientVertex(member,e.getRecord(),innerFieldName,recValue,member.schema(),od);
+                            putAsOrientVertex(member,edge,innerFieldName,recValue,member.schema(),od);
                         }
                     }
                 }

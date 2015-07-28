@@ -20,6 +20,7 @@ import com.orientechnologies.orient.core.db.document.ODatabaseDocumentTx;
 import com.orientechnologies.orient.core.db.record.OIdentifiable;
 import com.orientechnologies.orient.core.index.OIndex;
 import com.orientechnologies.orient.core.record.impl.ODocument;
+import com.orientechnologies.orient.core.record.impl.ORecordBytes;
 import com.tinkerpop.blueprints.Direction;
 import com.tinkerpop.blueprints.Edge;
 import com.tinkerpop.blueprints.impls.orient.OrientGraph;
@@ -29,6 +30,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.apache.avro.Schema;
 import org.apache.avro.util.Utf8;
 import org.apache.gora.orientdb.store.OrientDBMapping;
@@ -105,10 +108,13 @@ public class Deserialization {
                     break;
             case BYTES:
                 // Beware of ByteBuffer not being safely serialized
-                if (doc.field(vertf) instanceof byte[])
-                    result = ByteBuffer.wrap((byte[]) doc.field(vertf));
-                else
-                    result = (ByteBuffer)doc.field(vertf);
+//                if (doc.field(vertf) instanceof byte[])
+//                    result = ByteBuffer.wrap((byte[]) doc.field(vertf));
+//                else
+//                    result = (ByteBuffer)doc.field(vertf);
+                byte[] content = ((ORecordBytes)doc.field(vertf)).toStream();
+                LOG.info("Deserial bytes:"+doc.field(vertf));
+                result = ByteBuffer.wrap(content);
                 break;
             case NULL:
                     break;
@@ -149,14 +155,14 @@ public class Deserialization {
             throw new IllegalStateException("The database is not open");
                 
         ODocument rec = null;
-        try{
-        OIndex index = odb.getMetadata().getIndexManager().getIndex(mapping.getOClassName());
+        
+        OIndex index = odb.getMetadata().getIndexManager().getIndex(mapping.getOClassName()+".id");
         
         OIdentifiable oId = null;
         try{
-        oId = (OIdentifiable) index.get(doc.field(vertf)); 
-        }catch(NullPointerException e){
-            LOG.error("Index in fromDBDocument ",e.fillInStackTrace());
+            oId = (OIdentifiable) index.get(doc.field(vertf)); 
+        }catch(NullPointerException e){ // Exception throwed in case of an innerDoc
+            LOG.debug("Trying to retrieve an internalRecord with the index ");
         }
         
         if(oId == null)
@@ -167,9 +173,7 @@ public class Deserialization {
             }
         else
             rec = oId.getRecord();
-        }catch(NullPointerException e){
-            LOG.error("Error for field: "+vertf, e.fillInStackTrace());
-        }
+
         if(rec == null)
             LOG.error("The provided document ID is not stored inside the database");
         for(Schema.Field recField: schem.getFields()) {
@@ -213,7 +217,7 @@ public class Deserialization {
             // Beware of ByteBuffer not being safely serialized
             List<ByteBuffer> arrB = new ArrayList<ByteBuffer>();
             for(Object o: list) 
-                arrB.add(ByteBuffer.wrap((byte[]) o));
+                arrB.add(ByteBuffer.wrap(((ORecordBytes) o).toStream()));
             result = new DirtyListWrapper(arrB);
             break;
         case RECORD:
@@ -223,20 +227,29 @@ public class Deserialization {
             Class<?> clazz = null;
             try {
                 clazz = ClassLoadingUtils.loadClass(schem.getElementType().getFullName());
+                LOG.info("Class name of edge:"+schem.getElementType().getFullName());
             } catch (ClassNotFoundException e) {
                 LOG.error("Error on deserializing internal record in an array : ",e.fillInStackTrace());
             }
             // TODO implement graph
             for(Edge e : iterOut){
-                Persistent edgeRec = new BeanFactoryImpl(keyClass, clazz).newPersistent();
+                LOG.info("Inside OutEdge of vertex:"+actualVert.getIdentity().toString());
+                Persistent edgeRec = null;
+            try {
+                edgeRec = (Persistent)clazz.newInstance();
+            } catch (InstantiationException ex) {
+                LOG.error("Instanciation Exception of edge",ex.fillInStackTrace());
+            } catch (IllegalAccessException ex) {
+                LOG.error("IllegalAccesException of edge",ex.fillInStackTrace());
+            }
                 edgeRec.put(1, e.getLabel());
                 OrientVertex v = (OrientVertex)e.getVertex(Direction.IN);
                 
                 ODocument innerDoc = v.getRecord();
             try {
-                Persistent innerPersist = store.newInstanceT(innerDoc,innerDoc.fieldNames());
-                edgeRec.put(2, innerPersist);
-                record.add(edgeRec);
+                    Persistent innerPersist = store.newInstanceT(innerDoc,innerDoc.fieldNames());
+                    edgeRec.put(2, innerPersist);
+                    record.add(edgeRec);          
             } catch (Exception ex) {
                 LOG.error("Unknown Exception while retrieving record from vertex",ex.fillInStackTrace());
             }
@@ -276,7 +289,7 @@ public class Deserialization {
                         rmap.put(new Utf8(oKey), new Utf8((String) e.getValue()));
                         break;
                 case BYTES:
-                        rmap.put(new Utf8(oKey), ByteBuffer.wrap((byte[]) e.getValue()));
+                        rmap.put(new Utf8(oKey), ByteBuffer.wrap((((ORecordBytes) e.getValue()).toStream())));
                         break;
                 case NULL:
                         rmap.put(new Utf8(oKey), null);
