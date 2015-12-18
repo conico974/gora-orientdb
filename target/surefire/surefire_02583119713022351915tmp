@@ -1,8 +1,0 @@
-#surefire_0
-#Tue Jun 23 10:48:46 CEST 2015
-maven.ext.class.path=C\:\\Program Files\\NetBeans 7.4\\java\\maven-nblib\\netbeans-eventspy.jar
-user.dir=C\:\\Users\\Nicolas\\gora\\gora-orientdb
-hadoop.log.dir=C\:\\Users\\Nicolas\\gora\\gora-orientdb/target/test-logs/
-test.build.data=C\:\\Users\\Nicolas\\gora\\gora-orientdb/target/test-data/
-localRepository=C\:\\Users\\Nicolas\\.m2\\repository
-basedir=C\:\\Users\\Nicolas\\gora\\gora-orientdb
