@@ -89,7 +89,6 @@ public class Deserialization {
                     result = fromDBMap(doc,schem,vertf);
                     break;
             case ARRAY:
-                    //LOG.info("TEMPORARY!! INside fromDBObject ");
                     result = fromDBArray(doc,schem,vertf);
                     break;
             case RECORD:
@@ -104,14 +103,8 @@ public class Deserialization {
                     break;
             case INT:
                     result = (Integer)doc.field(vertf);
-                    //LOG.info("TEMPORARY!!!!  "+result);
                     break;
             case BYTES:
-                // Beware of ByteBuffer not being safely serialized
-//                if (doc.field(vertf) instanceof byte[])
-//                    result = ByteBuffer.wrap((byte[]) doc.field(vertf));
-//                else
-//                    result = (ByteBuffer)doc.field(vertf);
                 byte[] content = ((ORecordBytes)doc.field(vertf)).toStream();
                 LOG.info("Deserial bytes:"+doc.field(vertf));
                 result = ByteBuffer.wrap(content);
@@ -178,7 +171,6 @@ public class Deserialization {
             LOG.error("The provided document ID is not stored inside the database");
         for(Schema.Field recField: schem.getFields()) {
                 // FIXME: need special mapping ?
-                //record.put(recField.pos(), rec.field(recField.name()));
             String innerDocField = (mapping.getVertexField(recField.name()) != null) ? mapping
                 .getVertexField(recField.name()) : recField.name();
             if(!Utils.isValidFieldName(innerDocField))
@@ -350,7 +342,6 @@ public class Deserialization {
           new Object[] { innerSchem.getType(), vertf});
             
             result = fromDBObject(doc,field,innerSchem,vertf);
-            //LOG.info("Result dans union : "+result.toString());
         }
         
         return result;

@@ -381,7 +381,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         orientResult.setOdb(odb);
         String quer = OrientDBQuery.getSQLQuery(query, mapping);
         try{
-            LOG.debug("The query is : "+quer);  //TODO replace with debug
+            LOG.debug("The query is : "+quer);
             orientResult.initResult(quer, odb);
             
             LOG.debug("OrientResult size : "+orientResult.getSize());
@@ -411,7 +411,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
             String clusterName = odb.getClusterNameById(id);
             partitionQuery.setClusterName(clusterName);
             partitions.add(partitionQuery);
-            LOG.debug("Name of cluster : "+partitionQuery.getClusterName());  //TODO replace with debug
+            LOG.debug("Name of cluster : "+partitionQuery.getClusterName());
         }
         return partitions;
     }
@@ -434,7 +434,6 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
         }catch(Exception e){
             LOG.error("Generic error while closing database",e.fillInStackTrace());
         }
-        //odict.unload();
     }
     
     // DESERIALIZATION
@@ -480,12 +479,10 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
                 LOG.error("NullPointer on fromDBObject",e.fillInStackTrace());
             }
             if(result!=null){
-                // LOG.info("TEMPORARY!! result!=null add to the persistent");
                 persistent.put(field.pos(), result);
 
             }
         }
-        //LOG.info("TEMPORARY!! Value of the first field: "+persistent.get(1)+"  second: "+persistent.get(2));
         persistent.clearDirty();
         }catch(NullPointerException e){
             LOG.error("NullPointerException in NewInstanceT ",e.fillInStackTrace());
@@ -501,8 +498,7 @@ public class OrientDBStore<K,T extends PersistentBase> extends DataStoreBase<K,T
     */
 
     /**
-     * The name is not appropriate as it is actually used every time, not only during update.
-     * 
+     *
      * 
      * @param key
      * @param obj 

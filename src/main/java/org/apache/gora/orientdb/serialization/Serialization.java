@@ -67,7 +67,6 @@ public class Serialization {
      */
     private int getUnionSchema(Object pValue, Schema pUnionSchema){
     int unionSchemaPos = 0;
-//    String valueType = pValue.getClass().getSimpleName();
     Iterator<Schema> it = pUnionSchema.getTypes().iterator();
     while ( it.hasNext() ){
       Schema.Type schemaType = it.next().getType();
@@ -121,7 +120,6 @@ public class Serialization {
                         v.field(key, toOrientEmbeddedMap((Map<Utf8,?>)value,schem,field,v,od));
                     break;
 		case ARRAY:
-			//v.field(key, toOrientEmbeddedList((DirtyListWrapper) value, schem.getElementType().getType()));
                     toOrientEmbeddedList((List) value, schem.getElementType().getType(), schem, v, key, od);
                     break;
                 case LONG:
@@ -132,11 +130,9 @@ public class Serialization {
                     break;
                 case BYTES:
                     // Beware of ByteBuffer not being safely serialized
-                    LOG.debug("Insert Bytes"+field.name()+" value in string"+value.toString());  //Temporary
                     ORecordBytes record = new ORecordBytes(((ByteBuffer)value).array());
                     odb.save(record);
                     v.field(key, record);
-                    //v.setProperty(key, ((ByteBuffer) value).array());
                     break;
 		case STRING:
                     v.field(key, value.toString());
@@ -155,7 +151,6 @@ public class Serialization {
                     v.field(key, (Object)null);
                     break;
 		default:
-                    //LOG.debug("Insert default "+field.name()); //Temporary
                     v.field(key, value);
                     break;
 		}
@@ -209,8 +204,6 @@ public class Serialization {
     private ODocument toOrientDBDocument(Persistent value,Schema schem, ODocument v, String key, ODatabaseDocumentTx od){ // TO DO don't use the key inside this function
         String intRecName = schem.getName();
         ODocument record = null;
-        //od.begin();
-        //boolean emptyRecords;
         try{
             if(v.field(key)==null){
                 if(intRecName.equals(mapping.getOClassName()))
@@ -218,8 +211,7 @@ public class Serialization {
                 else
                     record = od.newInstance("intern"+mapping.getOClassName());  
             }else
-                record = od.load((ODocument)v.field(key)); // WHY?????
-                //record = v; //TEST not sure if it will works
+                record = od.load((ODocument)v.field(key));
             for (Schema.Field member: schem.getFields()) {
                     Object recValue = ((Persistent) value).get(member.pos());
                     String innerFieldName = (mapping.getVertexField(member.name())!=null) ? mapping.getVertexField(member.name()) : member.name();
@@ -229,7 +221,6 @@ public class Serialization {
                     putAsOrientVertex(member,record,innerFieldName,recValue,member.schema(),od);
             }
             od.save(record);
-            //od.commit();
         }catch(Exception e) {
             LOG.error("Generic error on Internal records",e.fillInStackTrace());
         }finally {
@@ -316,7 +307,9 @@ public class Serialization {
     }
 
     /**
-     * 
+     *
+     * Not Safe to use with record
+     *
      * @param genericArray
      * @param type
      * @param schem
@@ -449,8 +442,6 @@ public class Serialization {
                     }
                 }
                 od.commit();
-                //graph.commit();
-                //graph.shutdown();  TODO check this
                 break;
             default:
                     list.add( item );
